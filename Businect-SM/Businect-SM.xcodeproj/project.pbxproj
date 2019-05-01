@@ -14,6 +14,8 @@
 		21119A8822788F6800711623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21119A8622788F6800711623 /* LaunchScreen.storyboard */; };
 		21119A9322788F6800711623 /* Businect_SMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21119A9222788F6800711623 /* Businect_SMTests.swift */; };
 		21119A9E22788F6800711623 /* Businect_SMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21119A9D22788F6800711623 /* Businect_SMUITests.swift */; };
+		9F4A5C40227A535C00D633DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21119A8122788F6700711623 /* Main.storyboard */; };
+		9F4A5C41227A535D00D633DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21119A8122788F6700711623 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4A5C40227A535C00D633DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4A5C41227A535D00D633DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
