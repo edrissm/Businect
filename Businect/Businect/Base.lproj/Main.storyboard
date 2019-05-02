@@ -111,9 +111,6 @@
                                 <rect key="frame" x="153" y="628" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weiter"/>
-                                <connections>
-                                    <segue destination="8fz-6x-kp9" kind="show" id="Me5-QH-Md4"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Branche" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-xR-flW">
                                 <rect key="frame" x="122" y="320" width="97" height="30"/>
