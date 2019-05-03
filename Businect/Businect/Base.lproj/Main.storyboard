@@ -161,16 +161,16 @@
             </objects>
             <point key="canvasLocation" x="80.799999999999997" y="-52.463054187192121"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Gallery-->
         <scene sceneID="K7k-kx-CPp">
             <objects>
-                <viewController id="8fz-6x-kp9" sceneMemberID="viewController">
+                <viewController id="8fz-6x-kp9" customClass="imageGallery" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8J-g0-bW9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jee-7O-2yx">
-                                <rect key="frame" x="67" y="362" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="271" width="375" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="K0J-NN-kYM">
@@ -189,11 +189,17 @@
                                 <rect key="frame" x="136" y="592" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Bild hochladen"/>
+                                <connections>
+                                    <action selector="btnGalleryTapped:" destination="8fz-6x-kp9" eventType="touchUpInside" id="rl3-MG-UsZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5lL-Zp-jCx"/>
                     </view>
+                    <connections>
+                        <outlet property="imgImage" destination="Jee-7O-2yx" id="bYY-WV-383"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhq-l4-o6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

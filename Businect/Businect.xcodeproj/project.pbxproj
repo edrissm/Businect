@@ -14,6 +14,7 @@
 		2175242B22773E21000965C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2175242922773E21000965C6 /* LaunchScreen.storyboard */; };
 		2175243622773E22000965C6 /* BusinectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175243522773E22000965C6 /* BusinectTests.swift */; };
 		2175244122773E22000965C6 /* BusinectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175244022773E22000965C6 /* BusinectUITests.swift */; };
+		9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* imageGallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2175243C22773E22000965C6 /* BusinectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2175244022773E22000965C6 /* BusinectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinectUITests.swift; sourceTree = "<group>"; };
 		2175244222773E22000965C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3CDAEE227CAEE0001713DB /* imageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageGallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				2175242022773E20000965C6 /* AppDelegate.swift */,
 				2175242222773E20000965C6 /* ViewController.swift */,
+				9F3CDAEE227CAEE0001713DB /* imageGallery.swift */,
 				2175242422773E20000965C6 /* Main.storyboard */,
 				2175242722773E21000965C6 /* Assets.xcassets */,
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */,
 				2175242322773E20000965C6 /* ViewController.swift in Sources */,
 				2175242122773E20000965C6 /* AppDelegate.swift in Sources */,
 			);
