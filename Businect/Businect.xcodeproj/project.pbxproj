@@ -16,6 +16,7 @@
 		2175244122773E22000965C6 /* BusinectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175244022773E22000965C6 /* BusinectUITests.swift */; };
 		530CFAC3E3F002910BDAB122 /* Pods_BusinectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */; };
 		9F0FD35A2281C52A0045ADD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FD3592281C52A0045ADD6 /* GoogleService-Info.plist */; };
+		9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */; };
 		9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* imageGallery.swift */; };
 		AF55514C671D5B96370746DA /* Pods_BusinectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */; };
 		F90102BB3DE349BDC5EB212D /* Pods_Businect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */; };
@@ -57,6 +58,7 @@
 		41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0E4A0DD64CCE6887B9959F /* Pods-BusinectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectUITests.release.xcconfig"; path = "Target Support Files/Pods-BusinectUITests/Pods-BusinectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F0FD3592281C52A0045ADD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9F3CDAEE227CAEE0001713DB /* imageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageGallery.swift; sourceTree = "<group>"; };
 		A9ACB8E31450F16C41CC4BE6 /* Pods-Businect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Businect.release.xcconfig"; path = "Target Support Files/Pods-Businect/Pods-Businect.release.xcconfig"; sourceTree = "<group>"; };
 		AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Businect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				2175242722773E21000965C6 /* Assets.xcassets */,
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
 				2175242C22773E21000965C6 /* Info.plist */,
+				9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */,
 			);
 			path = Businect;
 			sourceTree = "<group>";
@@ -158,7 +161,6 @@
 				C61C730D42EB2032214A57D5 /* Pods-BusinectUITests.debug.xcconfig */,
 				9D0E4A0DD64CCE6887B9959F /* Pods-BusinectUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -404,6 +406,7 @@
 				9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */,
 				2175242322773E20000965C6 /* ViewController.swift in Sources */,
 				2175242122773E20000965C6 /* AppDelegate.swift in Sources */,
+				9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

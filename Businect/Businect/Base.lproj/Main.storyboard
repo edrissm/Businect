@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-676" y="659.85221674876846"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="DCt-pc-8Y1">
             <objects>
-                <viewController id="VNy-cz-qi7" sceneMemberID="viewController">
+                <viewController id="VNy-cz-qi7" customClass="RegisterViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhX-K1-GY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weiter"/>
                                 <connections>
+                                    <action selector="buttonAddUser:" destination="VNy-cz-qi7" eventType="touchUpInside" id="hg3-bj-H5H"/>
                                     <segue destination="8fz-6x-kp9" kind="show" id="aP6-Qc-f1h"/>
                                 </connections>
                             </button>
@@ -160,10 +161,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-77-wfd">
+                                <rect key="frame" x="153" y="736" width="111" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7xh-tR-hZ7"/>
                     </view>
+                    <connections>
+                        <outlet property="labelmessage" destination="gPF-77-wfd" id="E3G-wM-vwj"/>
+                        <outlet property="textFielBranche" destination="XzV-xR-flW" id="RKO-xC-2gZ"/>
+                        <outlet property="textFieldBeruf" destination="Hea-cs-Pg8" id="6WU-K3-CWp"/>
+                        <outlet property="textFieldEmail" destination="IgT-nx-2EX" id="hvJ-hI-C4Q"/>
+                        <outlet property="textFieldInteresse1" destination="qru-s3-sAf" id="7GX-zV-PET"/>
+                        <outlet property="textFieldInteresse2" destination="GKO-bk-p13" id="31z-9A-bOr"/>
+                        <outlet property="textFieldName" destination="T2W-Vu-JTO" id="X5w-8l-6HN"/>
+                        <outlet property="textFieldPasswort" destination="G3G-u4-x85" id="acS-Ch-lHe"/>
+                        <outlet property="textFieldVorname" destination="3Wg-Cb-Vau" id="sVs-OF-BnN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDW-Zr-BRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
