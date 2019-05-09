@@ -40,8 +40,8 @@ class RegisterViewController: UIViewController {
         
         let name = ["id":key,
                     "Name": textFieldName.text! as String,
-                    "Vorname": textFieldName.text! as String,
-                    "EMail": textFieldVorname.text! as String,
+                    "Vorname": textFieldVorname.text! as String,
+                    "EMail": textFieldEmail.text! as String,
                     "Passwort": textFieldPasswort.text! as String,
                     "Branche": textFielBranche.text! as String,
                     "Beruf": textFieldBeruf.text! as String,
