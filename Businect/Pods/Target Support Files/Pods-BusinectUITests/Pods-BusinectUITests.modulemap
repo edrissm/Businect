@@ -1,0 +1,6 @@
+framework module Pods_BusinectUITests {
+  umbrella header "Pods-BusinectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2166B54522840F1200E9B470 /* GoogleService-Info.plist */; };
 		2175242122773E20000965C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242022773E20000965C6 /* AppDelegate.swift */; };
 		2175242322773E20000965C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242222773E20000965C6 /* ViewController.swift */; };
 		2175242622773E20000965C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2175242422773E20000965C6 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		2175243622773E22000965C6 /* BusinectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175243522773E22000965C6 /* BusinectTests.swift */; };
 		2175244122773E22000965C6 /* BusinectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175244022773E22000965C6 /* BusinectUITests.swift */; };
 		530CFAC3E3F002910BDAB122 /* Pods_BusinectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */; };
-		9F0FD35A2281C52A0045ADD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FD3592281C52A0045ADD6 /* GoogleService-Info.plist */; };
 		9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */; };
 		9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* imageGallery.swift */; };
 		AF55514C671D5B96370746DA /* Pods_BusinectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */; };
@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2166B54522840F1200E9B470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2175241D22773E20000965C6 /* Businect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Businect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2175242022773E20000965C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2175242222773E20000965C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		2AA8035FC6EC0A046A429371 /* Pods-BusinectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectTests.debug.xcconfig"; path = "Target Support Files/Pods-BusinectTests/Pods-BusinectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0E4A0DD64CCE6887B9959F /* Pods-BusinectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectUITests.release.xcconfig"; path = "Target Support Files/Pods-BusinectUITests/Pods-BusinectUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9F0FD3592281C52A0045ADD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9F3CDAEE227CAEE0001713DB /* imageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageGallery.swift; sourceTree = "<group>"; };
 		A9ACB8E31450F16C41CC4BE6 /* Pods-Businect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Businect.release.xcconfig"; path = "Target Support Files/Pods-Businect/Pods-Businect.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		2175241F22773E20000965C6 /* Businect */ = {
 			isa = PBXGroup;
 			children = (
-				9F0FD3592281C52A0045ADD6 /* GoogleService-Info.plist */,
+				2166B54522840F1200E9B470 /* GoogleService-Info.plist */,
 				2175242022773E20000965C6 /* AppDelegate.swift */,
 				2175242222773E20000965C6 /* ViewController.swift */,
 				9F3CDAEE227CAEE0001713DB /* imageGallery.swift */,
@@ -283,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2175242B22773E21000965C6 /* LaunchScreen.storyboard in Resources */,
-				9F0FD35A2281C52A0045ADD6 /* GoogleService-Info.plist in Resources */,
+				2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */,
 				2175242822773E21000965C6 /* Assets.xcassets in Resources */,
 				2175242622773E20000965C6 /* Main.storyboard in Resources */,
 			);
@@ -315,15 +315,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Businect/Pods-Businect-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

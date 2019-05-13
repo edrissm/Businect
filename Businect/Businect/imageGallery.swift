@@ -8,8 +8,11 @@
 
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
     @IBOutlet weak var imgImage: UIImageView!
     var imagePicker = UIImagePickerController()
@@ -18,15 +21,37 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
         // Do any additional setup after loading the view.
     }
     
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
     
     @IBAction func btnGalleryTapped(_ sender: Any) {
-        imagePicker.delegate = self
+        
         imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }
-    @IBAction func btnCameraTapped(_ sender: Any) {
+
+    @IBAction func uplouddb(_ sender: Any) {
+        guard let image = imgImage.image else { return }
+        //guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        guard let imageData2 = image.pngData() else { return }
+        let uploadImageRef = imageReference.child("Profilbild.png")
+        let uploadTask = uploadImageRef.putData(imageData2, metadata: nil) { (metadata, error) in
+            print("UPLOAD TASK FINISHED")
+            print(metadata ?? "NO METADATA")
+            print(error ?? "NO ERROR")
+        }
+        uploadTask.observe(.progress){ (snapshot) in
+            print(snapshot.progress ?? "NO MORE PROGRESS")
+            
+        }
+        uploadTask.resume()
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
         
         var selectedImage: UIImage?
         if let editedImage = info[.editedImage] as? UIImage {
@@ -38,22 +63,22 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
             self.imgImage.image = selectedImage!
             picker.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
-    
+}
+
+
+
+/*
+func uploudImageToFirebaseStorage(data: NSData){
     
 }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    func
+}
+*/
 
