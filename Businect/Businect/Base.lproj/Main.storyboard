@@ -63,9 +63,6 @@
                                 <rect key="frame" x="152" y="729" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Abmelden"/>
-                                <connections>
-                                    <action selector="logoutButtonClicked:" destination="YgI-MR-L4B" eventType="touchUpInside" id="ZjU-i8-jtr"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQW-qR-fkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-676" y="659.85221674876846"/>
+            <point key="canvasLocation" x="-1679" y="716"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="DCt-pc-8Y1">
@@ -209,9 +206,6 @@
                                 <rect key="frame" x="165" y="682" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weiter"/>
-                                <connections>
-                                    <segue destination="YgI-MR-L4B" kind="show" id="yqA-UN-6pg"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXF-aG-lQ7">
                                 <rect key="frame" x="136" y="592" width="102" height="30"/>
@@ -257,16 +251,16 @@
             </objects>
             <point key="canvasLocation" x="-2671" y="-52"/>
         </scene>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="3Aa-0r-3lS">
             <objects>
-                <viewController id="PqR-SV-mhc" sceneMemberID="viewController">
+                <viewController id="PqR-SV-mhc" customClass="StartViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8G-LK-2Px">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-ep-U8E">
-                                <rect key="frame" x="168" y="471" width="38" height="30"/>
+                                <rect key="frame" x="168" y="204" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="LogIn"/>
                                 <connections>
@@ -275,11 +269,32 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSu-LS-qJ0">
+                                <rect key="frame" x="163" y="571" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOutButtonClicked:" destination="PqR-SV-mhc" eventType="touchUpInside" id="tL2-O6-JBO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-Gl-PTJ">
+                                <rect key="frame" x="169" y="391" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profil"/>
+                                <connections>
+                                    <segue destination="YgI-MR-L4B" kind="show" id="QYG-tT-IKs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UP9-Ph-JjO"/>
                     </view>
                     <navigationItem key="navigationItem" id="v6Z-vF-3La"/>
+                    <connections>
+                        <outlet property="Profillink" destination="p4z-Gl-PTJ" id="JCF-Ej-LvO"/>
+                        <outlet property="loginButton" destination="ggS-ep-U8E" id="2l1-ID-MFR"/>
+                        <outlet property="logoutButton" destination="MSu-LS-qJ0" id="Xr3-MG-6hC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4X-x7-emd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

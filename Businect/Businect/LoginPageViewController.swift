@@ -31,8 +31,8 @@ class LoginPageViewController: UIViewController {
                 
               if(user != nil){
                     print("user authenticated")
-                //let vc = self.storyboard?.instantiateViewController:"vcid"; as! ProfilseiteViewController
-                //self.present(vc, animated: true, completion: nil);
+                let vc = ProfilseiteViewController()
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
                 } else{
                     print("there was an error")
                     self.errorLabel.isHidden = false

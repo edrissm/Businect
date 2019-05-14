@@ -18,13 +18,6 @@ class ProfilseiteViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logoutButtonClicked(_ sender: Any) {
-        do{
-        try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
     
     /*
     // MARK: - Navigation
