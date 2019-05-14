@@ -15,6 +15,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var Profillink: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +25,12 @@ class StartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
+            self.registerButton.isEnabled = false
             self.loginButton.isEnabled = false
             self.logoutButton.isEnabled = true
             self.Profillink.isEnabled = true
         } else {
+            self.registerButton.isEnabled = true
             self.loginButton.isEnabled = true
             self.logoutButton.isEnabled = false
             self.Profillink.isEnabled = false
@@ -38,6 +41,7 @@ class StartViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             do{
                 try Auth.auth().signOut()
+                self.registerButton.isEnabled = true
                 self.loginButton.isEnabled = true
                 self.logoutButton.isEnabled = false
                 self.Profillink.isEnabled = false

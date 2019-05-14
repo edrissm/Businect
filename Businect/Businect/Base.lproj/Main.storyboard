@@ -285,6 +285,14 @@
                                     <segue destination="YgI-MR-L4B" kind="show" id="QYG-tT-IKs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Raq-vX-KkQ">
+                                <rect key="frame" x="146" y="148" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Registrieren"/>
+                                <connections>
+                                    <segue destination="VNy-cz-qi7" kind="show" id="K9K-sx-SkL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UP9-Ph-JjO"/>
@@ -294,6 +302,7 @@
                         <outlet property="Profillink" destination="p4z-Gl-PTJ" id="JCF-Ej-LvO"/>
                         <outlet property="loginButton" destination="ggS-ep-U8E" id="2l1-ID-MFR"/>
                         <outlet property="logoutButton" destination="MSu-LS-qJ0" id="Xr3-MG-6hC"/>
+                        <outlet property="registerButton" destination="Raq-vX-KkQ" id="ynW-gs-m5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4X-x7-emd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,9 +337,6 @@
                                 <rect key="frame" x="144" y="668" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Registrieren"/>
-                                <connections>
-                                    <segue destination="VNy-cz-qi7" kind="show" id="2Tx-2a-e0l"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lQq-4f-M14">
                                 <rect key="frame" x="70" y="106" width="240" height="128"/>
