@@ -9,6 +9,8 @@ target 'Businect' do
 pod 'Firebase/Database'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
 
   target 'BusinectTests' do
     inherit! :search_paths

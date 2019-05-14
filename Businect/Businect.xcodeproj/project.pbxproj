@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212AD5E6228ACFE500BBE426 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */; };
+		212AD5E8228ADC1D00BBE426 /* ProfilseiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */; };
 		2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2166B54522840F1200E9B470 /* GoogleService-Info.plist */; };
 		2175242122773E20000965C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242022773E20000965C6 /* AppDelegate.swift */; };
 		2175242322773E20000965C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242222773E20000965C6 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilseiteViewController.swift; sourceTree = "<group>"; };
 		2166B54522840F1200E9B470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2175241D22773E20000965C6 /* Businect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Businect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2175242022773E20000965C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
 				2175242C22773E21000965C6 /* Info.plist */,
 				9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */,
+				212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */,
+				212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */,
 			);
 			path = Businect;
 			sourceTree = "<group>";
@@ -408,8 +414,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */,
+				212AD5E8228ADC1D00BBE426 /* ProfilseiteViewController.swift in Sources */,
 				2175242322773E20000965C6 /* ViewController.swift in Sources */,
 				2175242122773E20000965C6 /* AppDelegate.swift in Sources */,
+				212AD5E6228ACFE500BBE426 /* LoginPageViewController.swift in Sources */,
 				9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
