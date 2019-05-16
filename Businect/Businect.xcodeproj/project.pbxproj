@@ -13,7 +13,6 @@
 		2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2166B54522840F1200E9B470 /* GoogleService-Info.plist */; };
 		2175242122773E20000965C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242022773E20000965C6 /* AppDelegate.swift */; };
 		2175242322773E20000965C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242222773E20000965C6 /* ViewController.swift */; };
-		2175242622773E20000965C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2175242422773E20000965C6 /* Main.storyboard */; };
 		2175242822773E21000965C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2175242722773E21000965C6 /* Assets.xcassets */; };
 		2175242B22773E21000965C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2175242922773E21000965C6 /* LaunchScreen.storyboard */; };
 		2175243622773E22000965C6 /* BusinectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175243522773E22000965C6 /* BusinectTests.swift */; };
@@ -22,6 +21,9 @@
 		9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */; };
 		9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* imageGallery.swift */; };
 		AF55514C671D5B96370746DA /* Pods_BusinectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */; };
+		E23782C4228D8A2F007FF583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23782C2228D8A2F007FF583 /* Main.storyboard */; };
+		E23782C8228DA4CE007FF583 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23782C7228DA4CE007FF583 /* ViewControllerTableViewCell.swift */; };
+		E23782CA228DA5E5007FF583 /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23782C9228DA5E5007FF583 /* NameModel.swift */; };
 		F90102BB3DE349BDC5EB212D /* Pods_Businect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +53,6 @@
 		2175241D22773E20000965C6 /* Businect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Businect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2175242022773E20000965C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2175242222773E20000965C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2175242522773E20000965C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2175242722773E21000965C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2175242A22773E21000965C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2175242C22773E21000965C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +71,9 @@
 		AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Businect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FA316F9DBDACEE89BEDFE3 /* Pods-Businect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Businect.debug.xcconfig"; path = "Target Support Files/Pods-Businect/Pods-Businect.debug.xcconfig"; sourceTree = "<group>"; };
 		C61C730D42EB2032214A57D5 /* Pods-BusinectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectUITests.debug.xcconfig"; path = "Target Support Files/Pods-BusinectUITests/Pods-BusinectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E23782C3228D8A2F007FF583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E23782C7228DA4CE007FF583 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E23782C9228DA5E5007FF583 /* NameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
 		F1DE83B34C463B2F626F3EC8 /* Pods-BusinectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectTests.release.xcconfig"; path = "Target Support Files/Pods-BusinectTests/Pods-BusinectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +134,9 @@
 				2175242022773E20000965C6 /* AppDelegate.swift */,
 				2175242222773E20000965C6 /* ViewController.swift */,
 				9F3CDAEE227CAEE0001713DB /* imageGallery.swift */,
-				2175242422773E20000965C6 /* Main.storyboard */,
+				E23782C2228D8A2F007FF583 /* Main.storyboard */,
+				E23782C9228DA5E5007FF583 /* NameModel.swift */,
+				E23782C7228DA4CE007FF583 /* ViewControllerTableViewCell.swift */,
 				2175242722773E21000965C6 /* Assets.xcassets */,
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
 				2175242C22773E21000965C6 /* Info.plist */,
@@ -294,7 +300,7 @@
 				2175242B22773E21000965C6 /* LaunchScreen.storyboard in Resources */,
 				2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */,
 				2175242822773E21000965C6 /* Assets.xcassets in Resources */,
-				2175242622773E20000965C6 /* Main.storyboard in Resources */,
+				E23782C4228D8A2F007FF583 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +422,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23782CA228DA5E5007FF583 /* NameModel.swift in Sources */,
 				9F3CDAEF227CAEE0001713DB /* imageGallery.swift in Sources */,
 				212AD5EA228B03B900BBE426 /* StartViewController.swift in Sources */,
+				E23782C8228DA4CE007FF583 /* ViewControllerTableViewCell.swift in Sources */,
 				212AD5E8228ADC1D00BBE426 /* ProfilseiteViewController.swift in Sources */,
 				2175242322773E20000965C6 /* ViewController.swift in Sources */,
 				2175242122773E20000965C6 /* AppDelegate.swift in Sources */,
@@ -458,20 +466,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2175242422773E20000965C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2175242522773E20000965C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2175242922773E21000965C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2175242A22773E21000965C6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E23782C2228D8A2F007FF583 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E23782C3228D8A2F007FF583 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
