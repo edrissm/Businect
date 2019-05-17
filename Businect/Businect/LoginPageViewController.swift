@@ -24,14 +24,12 @@ class LoginPageViewController: UIViewController {
     
     @IBAction func loginClickButton(_ sender: Any) {
         print("Login Button clicked")
-        
-        if(usernameTextField.text != "" && passwordTextField.text != ""){
+            if(usernameTextField.text != "" && passwordTextField.text != ""){
             Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!){
                 (user, error) in
                 
               if(user != nil){
                     print("user authenticated")
-                let vc = ProfilseiteViewController()
                 self.presentingViewController?.dismiss(animated: true, completion: nil)
                 } else{
                     print("there was an error")

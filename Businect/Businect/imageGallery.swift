@@ -65,20 +65,3 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
         }
     }
 }
-
-
-
-/*
-func uploudImageToFirebaseStorage(data: NSData){
-    
-}
-
-
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    func
-}
-*/
-

@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
 class RegisterViewController: UIViewController {
     var refName: DatabaseReference!
     @IBOutlet weak var textFieldName: UITextField!
@@ -50,7 +52,9 @@ class RegisterViewController: UIViewController {
         
         refName.child(key!).setValue(name)
         
-        labelmessage.text = "Super"
+        Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
+
+        
     }
 
     /*
