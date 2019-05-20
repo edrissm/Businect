@@ -52,7 +52,10 @@ class RegisterViewController: UIViewController {
         
         refName.child(textFieldVorname.text! as String).setValue(name)
         
-    
+        var user = Auth.auth().currentUser;
+        //user.updateProfile(
+         //   displayName: "blabla" )
+        
     }
 
     /*

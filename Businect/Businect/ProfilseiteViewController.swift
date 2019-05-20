@@ -59,7 +59,7 @@ class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.VornameLabel.text=Auth.auth().currentUser?.email
         
-        refName = Database.database().reference().child("Name");
+        refName = Database.database().reference().child("Benutzer");
         
         //observing the data changes
         refName.observe(DataEventType.value, with: { (snapshot) in
