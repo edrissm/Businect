@@ -11,53 +11,33 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfilseiteViewController: UIViewController {
     
     var refName: DatabaseReference!
     
-    @IBOutlet weak var VornameLabel: UILabel!
+   
+    @IBOutlet weak var lblVorname: UILabel!
+    @IBOutlet weak var lblBeruf: UILabel!
     
-    @IBOutlet weak var tblName: UITableView!
+    @IBOutlet weak var lblBranche: UILabel!
     
+    @IBOutlet weak var lblEMail: UILabel!
+    @IBOutlet weak var lblInteresse1: UILabel!
+    @IBOutlet weak var lblInteresse2: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPasswort: UILabel!
     
     @IBOutlet weak var downloadImage: UIImageView!
     
     var benutzerList = [NameModel]()
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return benutzerList.count
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        //creating a cell using the custom class
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
-        
-        //the artist object
-        let name: NameModel
-        
-        //getting the artist of selected position
-        name = benutzerList[indexPath.row]
-        
-        //adding values to labels
-        cell.lblVorname.text = name.Vorname
-        cell.lblBeruf.text = name.Beruf
-        cell.lblBranche.text = name.Branche
-        cell.lblEMail.text = name.EMail
-        cell.lblInteresse1.text = name.Interesse1
-        cell.lblInteresse2.text = name.Interesse2
-        cell.lblName.text = name.Name
-        cell.lblPasswort.text = name.Passwort
-        
-        //returning cell
-        return cell
-    }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.VornameLabel.text=Auth.auth().currentUser?.email
+       // self.VornameLabel.text=Auth.auth().currentUser?.email
         
         refName = Database.database().reference().child("Name");
         
@@ -70,31 +50,47 @@ class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITabl
                 //clearing the list
                 self.benutzerList.removeAll()
                 //iterating through all the values
-                for name in snapshot.children.allObjects as! [DataSnapshot] {
+                
+                let name = snapshot.childSnapshot(forPath: "-Lf-WWPOihohJGbWlEua")
+                
                     //getting values
-                    let nameObject = name.value as? [String: AnyObject]
-                    let Beruf  = nameObject?["Beruf"]
-                    let Vorname  = nameObject?["Vorname"]
-                    let Id = nameObject?["Id"]
-                    let Branche = nameObject?["Branche"]
-                    let EMail = nameObject?["EMail"]
-                    let Interesse1 = nameObject?["Interesse1"]
-                    let Interesse2 = nameObject?["Interesse2"]
-                    let Name = nameObject?["Name"]
-                    let Passwort = nameObject?["Passwort"]
+                let nameObject = name.value as? [String: AnyObject]
+                let Beruf  = nameObject?["Beruf"]
+                let Vorname  = nameObject?["Vorname"]
+                let Id = nameObject?["Id"]
+                let Branche = nameObject?["Branche"]
+                let EMail = nameObject?["EMail"]
+                let Interesse1 = nameObject?["Interesse1"]
+                let Interesse2 = nameObject?["Interesse2"]
+                let Name = nameObject?["Name"]
+                let Passwort = nameObject?["Passwort"]
                     
                     
                     //creating artist object with model and fetched values
-                    let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
+                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
                     
                     //appending it to list
+               
+                
+                
+                self.lblVorname.text = benutzer.Vorname
+                self.lblBeruf.text = benutzer.Beruf
+                self.lblBranche.text = benutzer.Branche
+                self.lblEMail.text = benutzer.EMail
+                self.lblInteresse1.text = benutzer.Interesse1
+                self.lblInteresse2.text = benutzer.Interesse2
+                self.lblName.text = benutzer.Name
+                self.lblPasswort.text = benutzer.Passwort
                     
-                    self.benutzerList.append(benutzer)
-                }
+                self.benutzerList.append(benutzer)
+                
+                
+                
                 //reloading the tableview
-                self.tblName.reloadData()
+               // self.tblName.reloadData()
             }
         })
+        
 
     }
    
