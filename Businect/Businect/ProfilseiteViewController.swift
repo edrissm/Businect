@@ -117,7 +117,11 @@ class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func onDownloadTapped(_ sender: Any) {
-        let downloadImageRef = imageReference.child("Profilbild.png")
+        
+        var fotoName : String = ""
+        fotoName = Auth.auth().currentUser?.email ?? ""
+        let dateiFormat = ".png"
+        let downloadImageRef = imageReference.child(fotoName+dateiFormat)
         let downloadtask = downloadImageRef.getData(maxSize: 1024 * 10 * 12) { (data, error) in
             if let data = data {
                 let image = UIImage(data: data)
