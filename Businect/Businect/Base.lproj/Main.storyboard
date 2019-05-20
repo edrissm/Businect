@@ -153,6 +153,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-Qa-T75">
+                                <rect key="frame" x="68" y="95" width="230" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksb-JI-J73">
+                                <rect key="frame" x="200" y="732" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="PqR-SV-mhc" kind="show" id="eE9-nb-Ubk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
@@ -166,6 +181,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="displayNameLabel" destination="kxG-Qa-T75" id="qiF-ik-WTg"/>
                         <outlet property="downloadImage" destination="RBv-kO-r7F" id="hhY-t2-bqV"/>
                         <outlet property="lblBeruf" destination="dmz-QW-bef" id="CBp-Gc-5OG"/>
                         <outlet property="lblBranche" destination="6HQ-EG-Wfs" id="gbf-av-jvl"/>
@@ -330,7 +346,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Registrierung abschließen"/>
                                 <connections>
-                                    <segue destination="YgI-MR-L4B" kind="show" id="6mm-ml-zfM"/>
+                                    <segue destination="YgI-MR-L4B" kind="show" id="mLr-bE-6UV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -481,6 +497,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QYG-tT-IKs"/>
+        <segue reference="uwU-vj-5N3"/>
+        <segue reference="mLr-bE-6UV"/>
     </inferredMetricsTieBreakers>
 </document>

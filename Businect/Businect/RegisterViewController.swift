@@ -51,13 +51,33 @@ class RegisterViewController: UIViewController {
         ]
         
         refName.child(textFieldVorname.text! as String).setValue(name)
-        
-        var user = Auth.auth().currentUser;
-        //user.updateProfile(
-         //   displayName: "blabla" )
-        
+   
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = "Carter Keneth"
+        changeRequest?.commitChanges(completion: { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
+    print("aajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfef")
+        print(Auth.auth().currentUser?.displayName as Any)
+        print(Auth.auth().currentUser?.email as Any)
+        if(Auth.auth().currentUser?.displayName==nil){
+            print("schnil")
+        }
     }
 
+    
+    func createProfileChangeRequest(name: String? = nil, _ callback: ((Error?) -> ())? = nil){
+        if let request = Auth.auth().currentUser?.createProfileChangeRequest(){
+            if let name = name{
+                request.displayName = name
+            }
+            request.commitChanges(completion: { (error) in
+                callback?(error)
+            })
+        }
+    }
     /*
     // MARK: - Navigation
 

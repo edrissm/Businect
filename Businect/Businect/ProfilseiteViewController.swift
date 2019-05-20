@@ -15,7 +15,8 @@ class ProfilseiteViewController: UIViewController {
     
     var refName: DatabaseReference!
     
-   
+    @IBOutlet weak var displayNameLabel: UILabel!
+    
     @IBOutlet weak var lblVorname: UILabel!
     @IBOutlet weak var lblBeruf: UILabel!
     
@@ -37,8 +38,14 @@ class ProfilseiteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.VornameLabel.text=Auth.auth().currentUser?.email
+        self.displayNameLabel.text = Auth.auth().currentUser?.email
+        //print(Auth.auth().currentUser?.email as! String)
+        //print(Auth.auth().currentUser?.displayName as! String)
+        print(Auth.auth().currentUser?.displayName as Any);
+        print("aajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfef")
+        print(Auth.auth().currentUser?.displayName ?? "jjj")
         
+       // self.VornameLabel.text=Auth.auth().currentUser?.email
         refName = Database.database().reference().child("Benutzer");
         
         //observing the data changes
