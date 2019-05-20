@@ -15,6 +15,8 @@ class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITabl
     
     var refName: DatabaseReference!
     
+    @IBOutlet weak var VornameLabel: UILabel!
+    
     @IBOutlet weak var tblName: UITableView!
     
     
@@ -54,6 +56,8 @@ class ProfilseiteViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.VornameLabel.text=Auth.auth().currentUser?.email
         
         refName = Database.database().reference().child("Name");
         

@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
         refName.child(key!).setValue(name)
         
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
-
+        
         
     }
 
