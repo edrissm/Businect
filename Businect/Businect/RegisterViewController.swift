@@ -31,15 +31,15 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refName = Database.database().reference().child("Name")
+        refName = Database.database().reference().child("Benutzer")
         
         // Do any additional setup after loading the view.
     }
     
     func addName(){
-        let key = refName.childByAutoId().key
+        Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
-        let name = ["id":key,
+        let name = ["id": textFieldEmail.text! as String,
                     "Name": textFieldName.text! as String,
                     "Vorname": textFieldVorname.text! as String,
                     "EMail": textFieldEmail.text! as String,
@@ -50,11 +50,9 @@ class RegisterViewController: UIViewController {
                     "Interesse2": textFieldInteresse2.text! as String
         ]
         
-        refName.child(key!).setValue(name)
+        refName.child(textFieldVorname.text! as String).setValue(name)
         
-        Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
-        
-        
+    
     }
 
     /*
