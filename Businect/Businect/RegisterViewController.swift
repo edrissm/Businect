@@ -44,6 +44,7 @@ class RegisterViewController: UIViewController {
    
     @IBOutlet weak var buttonEnablen: UIButton!
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBAction func Weiter(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
@@ -52,17 +53,25 @@ class RegisterViewController: UIViewController {
             print("Error in displayrewuest")
         }
     }
-    @IBAction func buttonAddUser(_ sender: UIButton) {
-     /*   if(textFieldName.text != "Name" || textFieldName.text != "" || textFieldVorname.text != "Vorname" || textFieldVorname.text != "" || textFieldBeruf.text != "Beruf" || textFieldBeruf.text != "" || textFieldEmail.text != "E-Mail-Adresse" || textFieldEmail.text != "" || textFieldPasswort.text != "Passwort" || textFieldPasswort.text != "" || textFieldInteresse1.text != "Interesse1" || textFieldInteresse1.text != "" || textFieldInteresse2.text != "Interesse2" || textFieldInteresse2.text != ""){
-                Weiter.isEnabled = false
-            
-        } else {
-        */addName()
-            buttonEnablen.isEnabled = false
-            Weiter.isEnabled = true
-     //   }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
-   
+    
+    @IBAction func buttonAddUser(_ sender: UIButton) {
+        if(textFieldPasswort.text!.count > 6 && isValidEmail(testStr: textFieldEmail.text!) && textFieldInteresse2.text!.count > 0 && textFieldInteresse1.text!.count > 0 && textFieldBeruf.text!.count > 0 && textFieldName.text!.count > 0 && textFieldVorname.text!.count > 0 && textFielBranche.text!.count > 0){
+            addName()
+            buttonEnablen.isEnabled = true
+            Weiter.isEnabled = true
+        } else{
+            print("there was an error")
+            self.errorLabel.isHidden = false
+        }
+    }
+    
     @IBOutlet weak var Weiter: UIButton!
     
     override func viewDidLoad() {
