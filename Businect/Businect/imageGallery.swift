@@ -19,17 +19,28 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        FotoAuswählenEnablen.isEnabled = true
+        RegistrierungAbschließenEnablen.isEnabled = false
     }
     
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
     
+    
+    @IBOutlet weak var FotoAuswählenEnablen: UIButton!
+    
+    @IBOutlet weak var RegistrierungAbschließenEnablen: UIButton!
+    
+    
     @IBAction func btnGalleryTapped(_ sender: Any) {
         
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+        FotoAuswählenEnablen.isEnabled = false
+        RegistrierungAbschließenEnablen.isEnabled = true
     }
 
     @IBAction func uplouddb(_ sender: Any) {
