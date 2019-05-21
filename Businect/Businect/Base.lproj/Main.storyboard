@@ -294,11 +294,6 @@
                                     <action selector="buttonAddUser:" destination="VNy-cz-qi7" eventType="touchUpInside" id="hg3-bj-H5H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1U-6E-CCX">
-                                <rect key="frame" x="66" y="699" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="display"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7xh-tR-hZ7"/>
@@ -518,8 +513,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6em-QD-OC3"/>
-        <segue reference="eE9-nb-Ubk"/>
+        <segue reference="es0-E8-frQ"/>
         <segue reference="2Uh-kY-UhT"/>
     </inferredMetricsTieBreakers>
 </document>
