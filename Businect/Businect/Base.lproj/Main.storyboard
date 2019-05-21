@@ -299,6 +299,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="display"/>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="there was an error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI0-6i-hnT">
+                                <rect key="frame" x="115" y="640" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99949318170547485" green="0.0055893310345709324" blue="0.22586360573768616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7xh-tR-hZ7"/>
@@ -306,6 +313,7 @@
                     <connections>
                         <outlet property="Weiter" destination="CDc-35-MFY" id="C5d-jM-bcP"/>
                         <outlet property="buttonEnablen" destination="W0Y-PX-c7z" id="gJL-ha-d7J"/>
+                        <outlet property="errorLabel" destination="PI0-6i-hnT" id="Dc9-6R-OUA"/>
                         <outlet property="labelmessage" destination="gPF-77-wfd" id="E3G-wM-vwj"/>
                         <outlet property="textFielBranche" destination="XzV-xR-flW" id="RKO-xC-2gZ"/>
                         <outlet property="textFieldBeruf" destination="Hea-cs-Pg8" id="6WU-K3-CWp"/>
