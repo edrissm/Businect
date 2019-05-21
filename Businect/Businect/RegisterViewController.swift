@@ -10,22 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-/*
- override func viewWillAppear(_ animated: Bool) {
- if Auth.auth().currentUser != nil {
- self.registerButton.isEnabled = false
- self.loginButton.isEnabled = false
- self.logoutButton.isEnabled = true
- self.Profillink.isEnabled = true
- } else {
- self.registerButton.isEnabled = true
- self.loginButton.isEnabled = true
- self.logoutButton.isEnabled = false
- self.Profillink.isEnabled = false
- }
- }
- */
-
 class RegisterViewController: UIViewController {
     var refName: DatabaseReference!
     @IBOutlet weak var textFieldName: UITextField!
@@ -68,6 +52,7 @@ class RegisterViewController: UIViewController {
             Weiter.isEnabled = true
         } else{
             print("there was an error")
+            
             self.errorLabel.isHidden = false
         }
     }
@@ -98,27 +83,7 @@ class RegisterViewController: UIViewController {
         ]
         
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
-   
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = "Carter Keneth"
-        changeRequest?.commitChanges(completion: { (error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        })
-    print("aajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfefaajdsnjdncfjncjenjnvjeververvewfewfewfef")
-        print(Auth.auth().currentUser?.displayName as Any)
-        print(Auth.auth().currentUser?.email as Any)
-        if(Auth.auth().currentUser?.displayName==nil){
-            print("schnil")
-        }
     }
-    
-   
-  
-
-   
-
     /*
     // MARK: - Navigation
 
