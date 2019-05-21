@@ -46,7 +46,7 @@ class ProfilseiteViewController: UIViewController {
         print(Auth.auth().currentUser?.displayName ?? "jjj")
         
        // self.VornameLabel.text=Auth.auth().currentUser?.email
-        refName = Database.database().reference().child("MOsafer");
+        refName = Database.database().reference().child("Benutzer");
         
         //observing the data changes
         refName.observe(DataEventType.value, with: { (snapshot) in
@@ -58,7 +58,7 @@ class ProfilseiteViewController: UIViewController {
                 self.benutzerList.removeAll()
                 //iterating through all the values
                 
-                let name = snapshot.childSnapshot(forPath: "-Lf-WWPOihohJGbWlEua")
+                let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
                 
                     //getting values
                 let nameObject = name.value as? [String: AnyObject]

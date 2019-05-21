@@ -44,7 +44,15 @@ class RegisterViewController: UIViewController {
    
     @IBOutlet weak var buttonEnablen: UIButton!
     
-   @IBAction func buttonAddUser(_ sender: UIButton) {
+    @IBAction func Weiter(_ sender: Any) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
+        changeRequest?.commitChanges { (error) in
+            // ...
+            print("Error in displayrewuest")
+        }
+    }
+    @IBAction func buttonAddUser(_ sender: UIButton) {
      /*   if(textFieldName.text != "Name" || textFieldName.text != "" || textFieldVorname.text != "Vorname" || textFieldVorname.text != "" || textFieldBeruf.text != "Beruf" || textFieldBeruf.text != "" || textFieldEmail.text != "E-Mail-Adresse" || textFieldEmail.text != "" || textFieldPasswort.text != "Passwort" || textFieldPasswort.text != "" || textFieldInteresse1.text != "Interesse1" || textFieldInteresse1.text != "" || textFieldInteresse2.text != "Interesse2" || textFieldInteresse2.text != ""){
                 Weiter.isEnabled = false
             
@@ -69,7 +77,7 @@ class RegisterViewController: UIViewController {
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
-        let name = ["id": textFieldEmail.text! as String,
+        let name = ["id": textFieldVorname.text!+textFieldName.text! as String,
                     "Name": textFieldName.text! as String,
                     "Vorname": textFieldVorname.text! as String,
                     "EMail": textFieldEmail.text! as String,
@@ -80,7 +88,7 @@ class RegisterViewController: UIViewController {
                     "Interesse2": textFieldInteresse2.text! as String
         ]
         
-        refName.child(textFieldVorname.text! as String).setValue(name)
+        refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
    
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = "Carter Keneth"
@@ -102,17 +110,6 @@ class RegisterViewController: UIViewController {
 
    
 
-    
-    func createProfileChangeRequest(name: String? = nil, _ callback: ((Error?) -> ())? = nil){
-        if let request = Auth.auth().currentUser?.createProfileChangeRequest(){
-            if let name = name{
-                request.displayName = name
-            }
-            request.commitChanges(completion: { (error) in
-                callback?(error)
-            })
-        }
-    }
     /*
     // MARK: - Navigation
 

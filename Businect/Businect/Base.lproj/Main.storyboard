@@ -282,6 +282,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weiter"/>
                                 <connections>
+                                    <action selector="Weiter:" destination="VNy-cz-qi7" eventType="touchUpInside" id="EoF-m5-uuj"/>
                                     <segue destination="8fz-6x-kp9" kind="show" id="6em-QD-OC3"/>
                                 </connections>
                             </button>
@@ -292,6 +293,11 @@
                                 <connections>
                                     <action selector="buttonAddUser:" destination="VNy-cz-qi7" eventType="touchUpInside" id="hg3-bj-H5H"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1U-6E-CCX">
+                                <rect key="frame" x="66" y="699" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="display"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
