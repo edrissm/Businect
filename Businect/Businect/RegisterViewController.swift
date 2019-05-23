@@ -17,15 +17,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var textFieldVorname: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPasswort: UITextField!
-    
     @IBOutlet weak var textFieldBeruf: UITextField!
     @IBOutlet weak var textFielBranche: UITextField!
     @IBOutlet weak var textFieldInteresse1: UITextField!
-    
     @IBOutlet weak var textFieldInteresse2: UITextField!
+    
     @IBOutlet weak var labelmessage: UILabel!
     
-   
     @IBOutlet weak var buttonEnablen: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -33,14 +31,12 @@ class RegisterViewController: UIViewController {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
         changeRequest?.commitChanges { (error) in
-            // ...
             print("Error in displayrewuest")
         }
     }
     
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
@@ -63,8 +59,6 @@ class RegisterViewController: UIViewController {
         Weiter.isEnabled = false
         buttonEnablen.isEnabled = true
         refName = Database.database().reference().child("Benutzer")
-        
-        // Do any additional setup after loading the view.
     }
     
     func addName(){
@@ -80,17 +74,6 @@ class RegisterViewController: UIViewController {
                     "Interesse1": textFieldInteresse1.text! as String,
                     "Interesse2": textFieldInteresse2.text! as String
         ]
-        
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

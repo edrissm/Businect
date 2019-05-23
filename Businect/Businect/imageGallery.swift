@@ -18,8 +18,6 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
     var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         FotoAuswählenEnablen.isEnabled = true
         RegistrierungAbschließenEnablen.isEnabled = false
     }
@@ -30,12 +28,10 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     
     @IBOutlet weak var FotoAuswählenEnablen: UIButton!
-    
     @IBOutlet weak var RegistrierungAbschließenEnablen: UIButton!
     
     
     @IBAction func btnGalleryTapped(_ sender: Any) {
-        
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
@@ -63,9 +59,6 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
-        
         var selectedImage: UIImage?
         if let editedImage = info[.editedImage] as? UIImage {
             selectedImage = editedImage
@@ -77,4 +70,5 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
             picker.dismiss(animated: true, completion: nil)
         }
     }
+    
 }
