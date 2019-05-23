@@ -2,13 +2,14 @@
 //  LoginPageViewController.swift
 //  Businect
 //
-//  Created by Edriss Mosafer on 14.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 
+// Der LoginPageViewController zeigt ein Anmeldefenster mit Eingabe der Email und des Passwortes.
+// Nur registrierte Nutzer, die in der Firebase Authentication registriert wurden, koennen sich anmelden.
 class LoginPageViewController: UIViewController {
 
   
@@ -16,12 +17,14 @@ class LoginPageViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
+    // Anmeldefenster wird geladen
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
+    // Wenn der Button "Anmelden" geklickt wird, oeffnet sich die Startseite und der User ist eingeloggt.
+    // Bei fehlgeschlagenem Anmeldeversuch wird ein Error ausgegeben.
     @IBAction func loginClickButton(_ sender: Any) {
         print("Login Button clicked")
             if(usernameTextField.text != "" && passwordTextField.text != ""){
@@ -41,16 +44,4 @@ class LoginPageViewController: UIViewController {
             self.errorLabel.isHidden = false
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
 }

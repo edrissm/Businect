@@ -10,7 +10,11 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+// Dieser ViewController erstellt einen neuen Benutzer in der Firebase Authentication
+// und erstellt einen Datensatz in der Firebase Database mit allen Attributen die eingeben werden
+// müssen.
 class RegisterViewController: UIViewController {
+    
     var refName: DatabaseReference!
     @IBOutlet weak var textFieldName: UITextField!
     
@@ -29,6 +33,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var buttonEnablen: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    // Leitet weiter auf die Seite zum "Profilbild hochladen" und gibt dem neuen Nutzer
+    // als Attribut dessen Vor- und Nachname mit.
     @IBAction func Weiter(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
@@ -38,6 +45,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    // Prueft ob die eingegebene Email-Adresse zulaessig ist
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
@@ -45,6 +53,8 @@ class RegisterViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
+    // Prueft ob alle Informationen für das Profil eingegeben wurden und erstellt dann das Profil.
+    // Der Weiter-Button wird dann angezeigt.
     @IBAction func buttonAddUser(_ sender: UIButton) {
         if(textFieldPasswort.text!.count > 6 && isValidEmail(testStr: textFieldEmail.text!) && textFieldInteresse2.text!.count > 0 && textFieldInteresse1.text!.count > 0 && textFieldBeruf.text!.count > 0 && textFieldName.text!.count > 0 && textFieldVorname.text!.count > 0 && textFielBranche.text!.count > 0){
             addName()
@@ -58,6 +68,7 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var Weiter: UIButton!
     
+    // Registrierseite wird geladen
     override func viewDidLoad() {
         super.viewDidLoad()
         Weiter.isEnabled = false
@@ -67,6 +78,9 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Erstellt einen neuen Benutzer in der Firebase Authentication mit Email-Adresse und Passwort.
+    // Dazu wird in der Firebase Database ein Datensatz mit allen Informationen des Benutzers unter
+    // der ID des Vor- und Nachenamen gespeichert.
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
@@ -83,14 +97,4 @@ class RegisterViewController: UIViewController {
         
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

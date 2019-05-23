@@ -2,7 +2,6 @@
 //  StartViewController.swift
 //  Businect
 //
-//  Created by Edriss Mosafer on 14.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -17,12 +16,13 @@ class StartViewController: UIViewController {
     @IBOutlet weak var Profillink: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    // Startseite wird geladen
     override func viewDidLoad() {
         super.viewDidLoad()
-        //FirebaseApp.configure()
-        // Do any additional setup after loading the view.
     }
     
+    // Prueft ob ein User angemeldet ist, und zeigt demnach die Buttons zur Profilseite
+    // oder zum Anmelden bzw. Registrieren.
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
             self.registerButton.isEnabled = false
@@ -37,6 +37,7 @@ class StartViewController: UIViewController {
         }
     }
 
+    // User wird abgemeldet und Button Anmelden und Registrieren erscheint.
     @IBAction func logOutButtonClicked(_ sender: Any) {
         if Auth.auth().currentUser != nil {
             do{
@@ -48,16 +49,6 @@ class StartViewController: UIViewController {
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
 }
