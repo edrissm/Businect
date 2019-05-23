@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Businect
 //
-//  Created by Edriss Mosafer on 29.04.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
