@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-// Der StartViewController 
+// Der StartViewController ist die Startseite der Businect-App und leitet das Login und Logout
+// sowie das Registrieren und den Link zur Profilseite ein.
 class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
