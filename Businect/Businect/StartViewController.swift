@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+// Der StartViewController 
 class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
