@@ -38,7 +38,7 @@ class ProfilseiteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.displayNameLabel.text = Auth.auth().currentUser?.email
+        //self.displayNameLabel.text = Auth.auth().currentUser?.email
         //print(Auth.auth().currentUser?.email as! String)
         //print(Auth.auth().currentUser?.displayName as! String)
         print(Auth.auth().currentUser?.displayName as Any);

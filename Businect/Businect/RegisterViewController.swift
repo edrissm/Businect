@@ -52,7 +52,6 @@ class RegisterViewController: UIViewController {
             Weiter.isEnabled = true
         } else{
             print("there was an error")
-            
             self.errorLabel.isHidden = false
         }
     }
