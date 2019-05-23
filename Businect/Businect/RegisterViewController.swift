@@ -2,7 +2,6 @@
 //  RegisterViewController.swift
 //  Businect
 //
-//  Created by Muqarab Afzal on 07.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -60,6 +59,7 @@ class RegisterViewController: UIViewController {
         buttonEnablen.isEnabled = true
         refName = Database.database().reference().child("Benutzer")
     }
+    
     
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)

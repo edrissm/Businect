@@ -2,10 +2,10 @@
 //  NameModel.swift
 //  Businect
 //
-//  Created by nina erlacher on 16.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
+//Klasse, um einen Benutzer zu erstellen. Auf sie wird in der Klasse "ProfilseiteViewController.swift" zugegriffen, wenn man die Daten eines registrieten Benuters von der Daten bank runterladen und im Profil anzeigen lassen will
 class NameModel{
     var Beruf: String?
     var Vorname: String?

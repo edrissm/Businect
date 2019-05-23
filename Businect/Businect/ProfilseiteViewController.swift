@@ -2,7 +2,6 @@
 //  ProfilseiteViewController.swift
 //  Businect
 //
-//  Created by Edriss Mosafer on 14.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -11,46 +10,33 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+//Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
 class ProfilseiteViewController: UIViewController {
     
     var refName: DatabaseReference!
     
-    @IBOutlet weak var displayNameLabel: UILabel!
-    
     @IBOutlet weak var lblVorname: UILabel!
     @IBOutlet weak var lblBeruf: UILabel!
-    
     @IBOutlet weak var lblBranche: UILabel!
-    
     @IBOutlet weak var lblEMail: UILabel!
     @IBOutlet weak var lblInteresse1: UILabel!
     @IBOutlet weak var lblInteresse2: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPasswort: UILabel!
-    
     @IBOutlet weak var downloadImage: UIImageView!
     
     var benutzerList = [NameModel]()
     
+    //Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // self.VornameLabel.text=Auth.auth().currentUser?.email
         refName = Database.database().reference().child("Benutzer");
-        
-        //observing the data changes
         refName.observe(DataEventType.value, with: { (snapshot) in
             
-            //if the reference have some values
             if snapshot.childrenCount > 0 {
-                
-                //clearing the list
                 self.benutzerList.removeAll()
-                //iterating through all the values
-                
                 let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
-                
-                    //getting values
                 let nameObject = name.value as? [String: AnyObject]
                 let Beruf  = nameObject?["Beruf"]
                 let Vorname  = nameObject?["Vorname"]
@@ -62,9 +48,7 @@ class ProfilseiteViewController: UIViewController {
                 let Name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
                 
-                    //creating artist object with model and fetched values
                 let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
-                    
                 
                 self.lblVorname.text = benutzer.Vorname
                 self.lblBeruf.text = benutzer.Beruf
@@ -78,16 +62,14 @@ class ProfilseiteViewController: UIViewController {
                 self.benutzerList.append(benutzer)
             }
         })
-        
-
     }
    
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
     
+    //Wenn man auf den Button "Profilgoto anzeigen" klickt, wird das Profulfoto des eingeloggten Nutzers im UIImageVeiw angezeigt.
     @IBAction func onDownloadTapped(_ sender: Any) {
-        
         var fotoName : String = ""
         fotoName = Auth.auth().currentUser?.email ?? ""
         let dateiFormat = ".png"
@@ -102,7 +84,6 @@ class ProfilseiteViewController: UIViewController {
         downloadtask.observe(.progress) { (snapshot) in
             print(snapshot.progress ?? "NO MORE PROGRESS")
         }
-        
         downloadtask.resume()
     }
 

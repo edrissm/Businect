@@ -2,7 +2,6 @@
 //  LoginPageViewController.swift
 //  Businect
 //
-//  Created by Edriss Mosafer on 14.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -18,8 +17,6 @@ class LoginPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginClickButton(_ sender: Any) {

@@ -2,7 +2,6 @@
 //  imageGallery.swift
 //  Businect
 //
-//  Created by Muqarab Afzal on 03.05.19.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -11,11 +10,18 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
+
+//Klasse, um ein Profilfoto aus der Gallerie des Smart-Phones auszuwählen und dieses dann zu in das Storage der Firebase- Datenbank hochzuladen.
 class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    @IBOutlet weak var imgImage: UIImageView!
+    @IBOutlet weak var imgImage: UIImageView!   //Wo ausgewählte Profilfoto angezeigt wird
+    
     var imagePicker = UIImagePickerController()
+    @IBOutlet weak var FotoAuswählenEnablen: UIButton!
+    @IBOutlet weak var RegistrierungAbschließenEnablen: UIButton!
+    
+    //Man kann erst die Seite verlassen, nachdem man ein Profilfoto aus der Galerie ausgewählt hat.
     override func viewDidLoad() {
         super.viewDidLoad()
         FotoAuswählenEnablen.isEnabled = true
@@ -26,11 +32,7 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
         return Storage.storage().reference().child("images")
     }
     
-    
-    @IBOutlet weak var FotoAuswählenEnablen: UIButton!
-    @IBOutlet weak var RegistrierungAbschließenEnablen: UIButton!
-    
-    
+    //Wenn ein Foto in der Galerie ausgewählt wird, wird dieses in den UIIMageView eingefügt und dem Benutzer wird es ermöglicht auf "Weiter" zu klicken
     @IBAction func btnGalleryTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
@@ -39,6 +41,7 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
         RegistrierungAbschließenEnablen.isEnabled = true
     }
 
+    //Das Foto, welches sich im UIImageView befindet, wird auf in das Firebase-Storage geladen.
     @IBAction func uplouddb(_ sender: Any) {
             guard let image = imgImage.image else { return }
             guard let imageData2 = image.pngData() else { return }
@@ -58,6 +61,7 @@ class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigat
             uploadTask.resume()
     }
     
+    //Durch klicken auf den Button "Profilfoto asuwählen" wir die Galerie des Bentuzers geöfnet. 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImage: UIImage?
         if let editedImage = info[.editedImage] as? UIImage {
