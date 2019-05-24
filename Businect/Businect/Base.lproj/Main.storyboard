@@ -186,6 +186,39 @@
             </objects>
             <point key="canvasLocation" x="-1679.2" y="715.27093596059115"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nIG-eJ-y8F">
+            <objects>
+                <viewController id="8Bd-db-NFZ" customClass="ARViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0k0-tS-6NB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nje-ui-F0k">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nje-ui-F0k" firstAttribute="leading" secondItem="nO9-JI-tRi" secondAttribute="leading" id="7fC-4h-vXy"/>
+                            <constraint firstAttribute="bottom" secondItem="nje-ui-F0k" secondAttribute="bottom" id="AO0-uq-qBv"/>
+                            <constraint firstItem="nje-ui-F0k" firstAttribute="top" secondItem="nO9-JI-tRi" secondAttribute="top" id="MEr-uT-8Oi"/>
+                            <constraint firstItem="nje-ui-F0k" firstAttribute="top" secondItem="nO9-JI-tRi" secondAttribute="top" id="a8D-x4-RNs"/>
+                            <constraint firstItem="nje-ui-F0k" firstAttribute="leading" secondItem="nO9-JI-tRi" secondAttribute="leading" id="b4g-e1-Lmg"/>
+                            <constraint firstAttribute="bottom" secondItem="nje-ui-F0k" secondAttribute="bottom" id="cAA-h4-7PO"/>
+                            <constraint firstItem="nje-ui-F0k" firstAttribute="trailing" secondItem="nO9-JI-tRi" secondAttribute="trailing" id="qjS-je-Ubu"/>
+                            <constraint firstAttribute="trailing" secondItem="nje-ui-F0k" secondAttribute="trailing" id="uRg-Kt-KnL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nO9-JI-tRi"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="nje-ui-F0k" id="IUT-CO-q36"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyf-Wz-o4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="998.27586206896558"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="DCt-pc-8Y1">
             <objects>
@@ -426,6 +459,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J11-XF-guo">
+                                <rect key="frame" x="163" y="640" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="AR"/>
+                                <connections>
+                                    <segue destination="8Bd-db-NFZ" kind="show" id="A3L-97-FpW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UP9-Ph-JjO"/>
