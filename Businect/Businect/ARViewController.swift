@@ -9,12 +9,44 @@
 import UIKit
 import SceneKit
 import ARKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    var refName: DatabaseReference!
+    var benutzerList = [NameModel]()
+    let Vorname = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Firebase Benutzerdaten runterladen
+        refName = Database.database().reference().child("Benutzer");
+        refName.observe(DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.childrenCount > 0 {
+                self.benutzerList.removeAll()
+                let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
+                let nameObject = name.value as? [String: AnyObject]
+                let Beruf  = nameObject?["Beruf"]
+                let Vorname  = nameObject?["Vorname"]
+                let Id = nameObject?["Id"]
+                let Branche = nameObject?["Branche"]
+                let EMail = nameObject?["EMail"]
+                let Interesse1 = nameObject?["Interesse1"]
+                let Interesse2 = nameObject?["Interesse2"]
+                let Name = nameObject?["Name"]
+                let Passwort = nameObject?["Passwort"]
+                
+                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
+                
+                self.benutzerList.append(benutzer)
+            }
+        })
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -27,7 +59,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         //
         //        // Set the scene to the view
         //        sceneView.scene = scene
-        let text = SCNText(string:"Businect", extrusionDepth: 1)
+        let text = SCNText(string:Vorname, extrusionDepth: 1)
         
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.green
