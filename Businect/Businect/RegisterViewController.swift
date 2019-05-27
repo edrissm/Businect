@@ -97,4 +97,8 @@ class RegisterViewController: UIViewController {
         
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
