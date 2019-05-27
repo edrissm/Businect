@@ -47,7 +47,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 let Interesse2 = nameObject?["Interesse2"]
                 let Name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
-                
+                 
                 let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
                 
                 self.lVorname = benutzer.Vorname!
