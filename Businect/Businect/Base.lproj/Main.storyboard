@@ -511,14 +511,6 @@
                                 <rect key="frame" x="70" y="106" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2E-il-6UO">
-                                <rect key="frame" x="144" y="452" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Anmelden"/>
-                                <connections>
-                                    <action selector="loginClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHJ-HX-cpy"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There was an error wiith authentication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpS-2h-ca1">
                                 <rect key="frame" x="41" y="543" width="298" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -532,6 +524,14 @@
                                 <state key="normal" title="Zutück zu Startseite"/>
                                 <connections>
                                     <segue destination="PqR-SV-mhc" kind="show" id="es0-E8-frQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2E-il-6UO">
+                                <rect key="frame" x="140" y="264" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Anmelden"/>
+                                <connections>
+                                    <action selector="loginClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHJ-HX-cpy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -553,7 +553,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eE9-nb-Ubk"/>
+        <segue reference="es0-E8-frQ"/>
         <segue reference="QYG-tT-IKs"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,7 +19,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     var refName: DatabaseReference!
     var benutzerList = [NameModel]()
-    let Vorname = ""
+    var lVorname = ""
+    var lName = ""
+    var lBeruf = ""
+    var lBranche = ""
+    var lInteresse1 = ""
+    var lInteresse2 = ""
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +50,31 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 
                 let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
                 
+                self.lVorname = benutzer.Vorname!
+                self.lName = benutzer.Name!
+                self.lBeruf =  benutzer.Beruf!
+                self.lBranche = benutzer.Branche!
+                self.lInteresse1 = benutzer.Interesse1!
+                self.lInteresse2 = benutzer.Interesse2!
+                
+                
+                
+                let text = SCNText(string: "Vorname: " + self.lVorname + "\nName: " + self.lName + "\nBranche: " + self.lBranche + "\nInteressen: " + self.lInteresse1 + "," + self.lInteresse2, extrusionDepth: 1)
+                print(self.lVorname)
+                
+                let material = SCNMaterial()
+                material.diffuse.contents = UIColor.green
+                text.materials = [material]
+                
+                let node = SCNNode()
+                node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
+                node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
+                node.geometry = text
+                self.sceneView.scene.rootNode.addChildNode(node)
+                self.sceneView.autoenablesDefaultLighting = true
+                
+                
+                
                 self.benutzerList.append(benutzer)
             }
         })
@@ -59,19 +90,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         //
         //        // Set the scene to the view
         //        sceneView.scene = scene
-        let text = SCNText(string:Vorname, extrusionDepth: 1)
         
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.green
-        text.materials = [material]
-        
-        let node = SCNNode()
-        node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
-        node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
-        node.geometry = text
-        sceneView.scene.rootNode.addChildNode(node)
-        sceneView.autoenablesDefaultLighting = true
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
