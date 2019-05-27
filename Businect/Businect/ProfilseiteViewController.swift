@@ -25,11 +25,43 @@ class ProfilseiteViewController: UIViewController {
     @IBOutlet weak var lblPasswort: UILabel!
     @IBOutlet weak var downloadImage: UIImageView!
     
+   
+    
+    
+    @IBOutlet weak var switchOutlet: UISwitch!
+    
+    @IBOutlet weak var stateSwitch: UISwitch!
+
+    
+    @IBAction func switchAction(_ sender: UISwitch) {
+        if switchOutlet.isOn == false {
+            stateSwitch.setOn(false, animated:true)
+        }
+        else{
+            stateSwitch.setOn(true, animated:true)
+        }
+    }
+    
+
+    @objc func stateChanged(switchState: UISwitch) {
+        if switchState.isOn {
+            Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
+            print("AN")
+        } else {
+              Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": false])
+            print("AUS")
+            
+        }
+    }
+    
+    
     var benutzerList = [NameModel]()
     
     //Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
     override func viewDidLoad() {
         super.viewDidLoad()
+           stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+        
 
         refName = Database.database().reference().child("Benutzer");
         refName.observe(DataEventType.value, with: { (snapshot) in
@@ -86,5 +118,7 @@ class ProfilseiteViewController: UIViewController {
         }
         downloadtask.resume()
     }
+    
+  
 
 }

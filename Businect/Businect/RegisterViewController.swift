@@ -27,7 +27,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var textFieldInteresse1: UITextField!
     
     @IBOutlet weak var textFieldInteresse2: UITextField!
-    @IBOutlet weak var labelmessage: UILabel!
     
    
     @IBOutlet weak var buttonEnablen: UIButton!
@@ -92,9 +91,10 @@ class RegisterViewController: UIViewController {
                     "Branche": textFielBranche.text! as String,
                     "Beruf": textFieldBeruf.text! as String,
                     "Interesse1": textFieldInteresse1.text! as String,
-                    "Interesse2": textFieldInteresse2.text! as String
-        ]
-        
+                    "Interesse2": textFieldInteresse2.text! as String,
+                    "Verfügbarkeit": true as Bool,
+            ] as [String : Any]
+       
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
     }
     

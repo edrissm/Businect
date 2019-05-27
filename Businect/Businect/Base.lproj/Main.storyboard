@@ -161,6 +161,21 @@
                                     <segue destination="PqR-SV-mhc" kind="show" id="eE9-nb-Ubk"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5SJ-WX-9yH">
+                                <rect key="frame" x="294" y="684" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="YgI-MR-L4B" eventType="touchUpInside" id="VMv-ni-CLT"/>
+                                    <action selector="switchAction:" destination="YgI-MR-L4B" eventType="valueChanged" id="fXf-Oy-b6Y"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verfügbarkeit ändern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saC-BS-SlI">
+                                <rect key="frame" x="110" y="689" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
@@ -180,6 +195,8 @@
                         <outlet property="lblName" destination="Db2-BU-UvH" id="V5T-gC-EEa"/>
                         <outlet property="lblPasswort" destination="Bga-mZ-6v6" id="HeM-rV-SVO"/>
                         <outlet property="lblVorname" destination="cWT-iH-Px9" id="R6j-Hy-fVk"/>
+                        <outlet property="stateSwitch" destination="5SJ-WX-9yH" id="dXr-KD-k1e"/>
+                        <outlet property="switchOutlet" destination="5SJ-WX-9yH" id="qLo-ht-O1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQW-qR-fkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -553,7 +570,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="es0-E8-frQ"/>
+        <segue reference="eE9-nb-Ubk"/>
         <segue reference="QYG-tT-IKs"/>
     </inferredMetricsTieBreakers>
 </document>
