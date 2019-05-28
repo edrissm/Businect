@@ -10,7 +10,7 @@ import FirebaseAuth
 
 // Der LoginPageViewController zeigt ein Anmeldefenster mit Eingabe der Email und des Passwortes.
 // Nur registrierte Nutzer, die in der Firebase Authentication registriert wurden, koennen sich anmelden.
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, UITextFieldDelegate {
 
   
     @IBOutlet weak var usernameTextField: UITextField!
@@ -43,5 +43,18 @@ class LoginPageViewController: UIViewController {
             print("there was an error")
             self.errorLabel.isHidden = false
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField==usernameTextField{
+            passwordTextField.becomeFirstResponder()
+        } else{
+            passwordTextField.resignFirstResponder()
+        }
+        return true
     }
 }
