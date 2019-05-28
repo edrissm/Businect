@@ -13,7 +13,7 @@ import FirebaseAuth
 // Dieser ViewController erstellt einen neuen Benutzer in der Firebase Authentication
 // und erstellt einen Datensatz in der Firebase Database mit allen Attributen die eingeben werden
 // müssen.
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var refName: DatabaseReference!
     @IBOutlet weak var textFieldName: UITextField!
@@ -100,5 +100,26 @@ class RegisterViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField==textFieldName{
+            textFieldVorname.becomeFirstResponder()
+        } else if textField==textFieldVorname{
+            textFieldEmail.becomeFirstResponder()
+        } else if textField==textFieldEmail{
+            textFieldPasswort.becomeFirstResponder()
+        } else if textField==textFieldPasswort{
+            textFielBranche.becomeFirstResponder()
+        } else if textField==textFielBranche{
+            textFieldBeruf.becomeFirstResponder()
+        } else if textField==textFieldBeruf{
+            textFieldInteresse1.becomeFirstResponder()
+        } else if textField==textFieldInteresse1{
+            textFieldInteresse2.becomeFirstResponder()
+        } else{
+            textFieldInteresse2.resignFirstResponder()
+        }
+        return true
     }
 }
