@@ -25,6 +25,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var lBranche = ""
     var lInteresse1 = ""
     var lInteresse2 = ""
+    var lVerfügbarkeit = true
    
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 let Interesse2 = nameObject?["Interesse2"]
                 let Name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
+                let Verfügbarkeit = nameObject?["Verfügbarkeit"]
                  
                 let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
                 
@@ -56,26 +58,43 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 self.lBranche = benutzer.Branche!
                 self.lInteresse1 = benutzer.Interesse1!
                 self.lInteresse2 = benutzer.Interesse2!
+                self.lVerfügbarkeit = true
                 
-                
-                
-                let text = SCNText(string: "Vorname: " + self.lVorname + "\nName: " + self.lName + "\nBranche: " + self.lBranche + "\nInteressen: " + self.lInteresse1 + "," + self.lInteresse2, extrusionDepth: 1)
-                print(self.lVorname)
                 
                 let material = SCNMaterial()
-                material.diffuse.contents = UIColor.green
-                text.materials = [material]
-                
-                let node = SCNNode()
-                node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
-                node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
-                node.geometry = text
-                self.sceneView.scene.rootNode.addChildNode(node)
-                self.sceneView.autoenablesDefaultLighting = true
-                
-                
-                
-                self.benutzerList.append(benutzer)
+                if self.lVerfügbarkeit==true{
+                    let text = SCNText(string: "Vorname: " + self.lVorname + "\nName: " + self.lName + "\nBranche: " + self.lBranche + "\nInteressen: " + self.lInteresse1 + "," + self.lInteresse2, extrusionDepth: 1)
+                    print(self.lVorname)
+                    material.diffuse.contents = UIColor.green
+                    text.materials = [material]
+                    
+                    let node = SCNNode()
+                    node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
+                    node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
+                    node.geometry = text
+                    self.sceneView.scene.rootNode.addChildNode(node)
+                    self.sceneView.autoenablesDefaultLighting = true
+                    
+                    
+                    
+                    self.benutzerList.append(benutzer)
+                } else{
+                    let text = SCNText(string: "Nicht Verfügbar", extrusionDepth: 1)
+                    print(self.lVorname)
+                    material.diffuse.contents = UIColor.red
+                    text.materials = [material]
+                    
+                    let node = SCNNode()
+                    node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
+                    node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
+                    node.geometry = text
+                    self.sceneView.scene.rootNode.addChildNode(node)
+                    self.sceneView.autoenablesDefaultLighting = true
+                    
+                    
+                    
+                    self.benutzerList.append(benutzer)
+                }
             }
         })
         
