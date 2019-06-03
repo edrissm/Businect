@@ -48,9 +48,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 let Interesse2 = nameObject?["Interesse2"]
                 let Name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
-                let Verfügbarkeit = nameObject?["Verfügbarkeit"]
+                let Verfuegbarkeit = nameObject?["Verfügbarkeit"]
                  
-                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
+                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
                 
                 self.lVorname = benutzer.Vorname!
                 self.lName = benutzer.Name!
@@ -58,7 +58,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 self.lBranche = benutzer.Branche!
                 self.lInteresse1 = benutzer.Interesse1!
                 self.lInteresse2 = benutzer.Interesse2!
-                self.lVerfügbarkeit = true
+                self.lVerfügbarkeit = benutzer.Verfuegbarkeit!
                 
                 
                 let material = SCNMaterial()

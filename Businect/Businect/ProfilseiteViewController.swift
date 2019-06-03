@@ -25,7 +25,7 @@ class ProfilseiteViewController: UIViewController {
     @IBOutlet weak var lblPasswort: UILabel!
     @IBOutlet weak var downloadImage: UIImageView!
     
-   
+   var verf = Bool()
     
     
     @IBOutlet weak var switchOutlet: UISwitch!
@@ -79,8 +79,9 @@ class ProfilseiteViewController: UIViewController {
                 let Interesse2 = nameObject?["Interesse2"]
                 let Name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
+                let Verfuegbarkeit = nameObject?["Verfuegbarkeit"]
                 
-                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String)
+                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
                 
                 self.lblVorname.text = benutzer.Vorname
                 self.lblBeruf.text = benutzer.Beruf
@@ -90,8 +91,11 @@ class ProfilseiteViewController: UIViewController {
                 self.lblInteresse2.text = benutzer.Interesse2
                 self.lblName.text = benutzer.Name
                 self.lblPasswort.text = benutzer.Passwort
+                self.verf = benutzer.Verfuegbarkeit ?? true
                     
                 self.benutzerList.append(benutzer)
+                
+                
             }
         })
     }

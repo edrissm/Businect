@@ -16,9 +16,10 @@ class NameModel{
     var Interesse2: String?
     var Name: String?
     var Passwort: String?
+    var Verfuegbarkeit: Bool?
     
     
-    init(Beruf: String?,Vorname: String?, Id: String?, Branche: String?, EMail: String?, Interesse1: String?, Interesse2: String?, Name: String?, Passwort: String?){
+    init(Beruf: String?,Vorname: String?, Id: String?, Branche: String?, EMail: String?, Interesse1: String?, Interesse2: String?, Name: String?, Passwort: String?, Verfuegbarkeit: Bool?){
         self.Beruf = Beruf
         self.Vorname = Vorname
         self.Id = Id
@@ -28,5 +29,6 @@ class NameModel{
         self.Interesse2 = Interesse2
         self.Name = Name
         self.Passwort = Passwort
+        self.Verfuegbarkeit = Verfuegbarkeit
     }
 }

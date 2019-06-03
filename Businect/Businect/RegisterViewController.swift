@@ -92,7 +92,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                     "Beruf": textFieldBeruf.text! as String,
                     "Interesse1": textFieldInteresse1.text! as String,
                     "Interesse2": textFieldInteresse2.text! as String,
-                    "Verfügbarkeit": true as Bool,
+                    "Verfuegbarkeit": true as Bool,
             ] as [String : Any]
        
         refName.child(textFieldVorname.text!+textFieldName.text! as String).setValue(name)
