@@ -1,7 +1,7 @@
 //
 //  LoginPageViewController.swift
 //  Businect
-//
+// Created by Nina and Edriss
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -25,6 +25,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     // Wenn der Button "Anmelden" geklickt wird, oeffnet sich die Startseite und der User ist eingeloggt.
     // Bei fehlgeschlagenem Anmeldeversuch wird ein Error ausgegeben.
+    // Created by Nina and Edriss
     @IBAction func loginClickButton(_ sender: Any) {
         print("Login Button clicked")
             if(usernameTextField.text != "" && passwordTextField.text != ""){
@@ -49,6 +50,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // Created by Nina and Edriss
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField==usernameTextField{
             passwordTextField.becomeFirstResponder()

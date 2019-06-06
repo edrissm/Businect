@@ -1,7 +1,7 @@
 //
 //  NameModel.swift
 //  Businect
-//
+//  Created by Nina
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -18,7 +18,7 @@ class NameModel{
     var Passwort: String?
     var Verfuegbarkeit: Bool?
     
-    //Created by Nina Erlacher
+    //Created by Nina
     init(Beruf: String?,Vorname: String?, Id: String?, Branche: String?, EMail: String?, Interesse1: String?, Interesse2: String?, Name: String?, Passwort: String?, Verfuegbarkeit: Bool?){
         self.Beruf = Beruf
         self.Vorname = Vorname

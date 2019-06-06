@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  Businect
 //
-//  Created by Edriss Mosafer.
+//  Created by Edriss, Muqarab, Nina and Max
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -27,10 +27,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldInteresse2: UITextField!
     @IBOutlet weak var buttonEnablen: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    @IBOutlet weak var continueButton: UIButton!
     // Leitet weiter auf die Seite zum "Profilbild hochladen" und gibt dem neuen Nutzer
     // als Attribut dessen Vor- und Nachname mit.
-    // Created by Edriss Mosafer.
+    // Created by Edriss
     @IBAction func clickContinue(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
@@ -40,6 +40,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Prueft ob die eingegebene Email-Adresse zulaessig ist
+    // Created by Nina
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -47,6 +48,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Prueft ob alle Informationen für das Profil eingegeben wurden und erstellt dann das Profil. Der Weiter-Button wird dann angezeigt.
+    // Created by Nina
     @IBAction func buttonAddUser(_ sender: UIButton) {
         if(textFieldPasswort.text!.count > 6 && isValidEmail(testStr: textFieldEmail.text!) && textFieldInteresse2.text!.count > 0 && textFieldInteresse1.text!.count > 0 && textFieldBeruf.text!.count > 0 && textFieldName.text!.count > 0 && textFieldVorname.text!.count > 0 && textFielBranche.text!.count > 0){
             addName()
@@ -58,9 +60,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var continueButton: UIButton!
+
     
     // Registrierseite wird geladen
+    // Created by Nina and Edriss
     override func viewDidLoad() {
         super.viewDidLoad()
         continueButton.isEnabled = false
@@ -69,7 +72,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Erstellt einen neuen Benutzer in der Firebase Authentication mit Email-Adresse und Passwort. Dazu wird in der Firebase Database ein Datensatz mit allen Informationen des Benutzers unter der ID des Vor- und Nachenamen gespeichert.
-    // Created by Edriss Mosafer.
+    // Created by Edriss and Nina
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
@@ -93,7 +96,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Returnbutton auf der Tastatur leitet auf das nächststehende Textfeld.
-    // Created by Edriss Mosafer.
+    // Created by Edriss
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField==textFieldName{
             textFieldVorname.becomeFirstResponder()

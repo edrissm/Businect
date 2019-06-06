@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ARBusinect
 //
-//  Created by Muqarab Afzal on 24.05.19.
+// Created by Nina, Edriss, Muqarab and Max
 //  Copyright © 2019 Muqarab Afzal. All rights reserved.
 //
 
@@ -29,6 +29,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var tempVerfügbarkeit = true
    
     // Zeigt die eigenen Benutzerinformationen augmented an.
+    // Created by Nina, Edriss and Muqarab
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,18 +96,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        
-        // Run the view's session
         sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Pause the view's session
         sceneView.session.pause()
     }
    

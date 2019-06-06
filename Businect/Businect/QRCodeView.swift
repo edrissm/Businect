@@ -2,7 +2,7 @@
 //  QRCodeView.swift
 //  Businect
 //
-//  Created by Muqarab Afzal on 03.06.19.
+// Created by Muqarab and Max
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 import UIKit
@@ -13,8 +13,9 @@ import FirebaseStorage
 class QRCodeView: UIViewController {
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var Button2: UIButton!
-    
-    //    Wenn die Seite geladen wird, wird automatisch ein QR-Code für den Nutzer aus seiner Firebase URL erstellt. Zudem wird ein Screenshot des Barcode direkt im Firebase Storage gespeichert.
+
+    //  Wenn die Seite geladen wird, wird automatisch ein QR-Code für den Nutzer aus seiner Firebase URL erstellt. Zudem wird ein Screenshot des Barcode direkt im Firebase Storage gespeichert.
+    // Created by Muqarab and Max
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +65,7 @@ class QRCodeView: UIViewController {
     }
     
     //Funktion um einen Screenshot des QR-Codes zu machen und zu teilen
+    // Created by Muqarab
     func shareMethod(){
         Button2.isHidden = true
         let top: CGFloat = 200

@@ -1,7 +1,7 @@
 //
 //  StartViewController.swift
 //  Businect
-//
+// Created by Nina and Edriss
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -25,6 +25,7 @@ class StartViewController: UIViewController {
     
     // Prueft ob ein User angemeldet ist, und zeigt demnach die Buttons zur Profilseite
     // oder zum Anmelden bzw. Registrieren.
+    // Created by Nina and Edriss
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
             self.registerButton.isEnabled = false
@@ -40,6 +41,7 @@ class StartViewController: UIViewController {
     }
 
     // User wird abgemeldet und Button Anmelden und Registrieren erscheint.
+    // Created by Nina and Edriss
     @IBAction func logOutButtonClicked(_ sender: Any) {
         if Auth.auth().currentUser != nil {
             do{
