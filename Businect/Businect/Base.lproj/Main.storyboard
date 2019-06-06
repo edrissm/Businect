@@ -559,9 +559,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="v6Z-vF-3La"/>
                     <connections>
-                        <outlet property="Profillink" destination="p4z-Gl-PTJ" id="JCF-Ej-LvO"/>
                         <outlet property="loginButton" destination="ggS-ep-U8E" id="2l1-ID-MFR"/>
                         <outlet property="logoutButton" destination="MSu-LS-qJ0" id="Xr3-MG-6hC"/>
+                        <outlet property="profileLink" destination="p4z-Gl-PTJ" id="JCF-Ej-LvO"/>
                         <outlet property="registerButton" destination="Raq-vX-KkQ" id="ynW-gs-m5i"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,7 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var Profillink: UIButton!
+    @IBOutlet weak var profileLink: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
     // Startseite wird geladen
@@ -30,12 +30,12 @@ class StartViewController: UIViewController {
             self.registerButton.isEnabled = false
             self.loginButton.isEnabled = false
             self.logoutButton.isEnabled = true
-            self.Profillink.isEnabled = true
+            self.profileLink.isEnabled = true
         } else {
             self.registerButton.isEnabled = true
             self.loginButton.isEnabled = true
             self.logoutButton.isEnabled = false
-            self.Profillink.isEnabled = false
+            self.profileLink.isEnabled = false
         }
     }
 
@@ -47,7 +47,7 @@ class StartViewController: UIViewController {
                 self.registerButton.isEnabled = true
                 self.loginButton.isEnabled = true
                 self.logoutButton.isEnabled = false
-                self.Profillink.isEnabled = false
+                self.profileLink.isEnabled = false
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
