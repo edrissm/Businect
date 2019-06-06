@@ -3,7 +3,7 @@
 //  ARBusinect
 //
 // Created by Nina, Edriss, Muqarab and Max
-//  Copyright © 2019 Muqarab Afzal. All rights reserved.
+// Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
 import UIKit

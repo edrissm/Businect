@@ -3,9 +3,8 @@
 //  Businect
 //  Created by Nina
 //  Copyright © 2019 Scrum-Made. All rights reserved.
-//
 
-//Klasse, um einen Benutzer zu erstellen. Auf sie wird in der Klasse "ProfilseiteViewController.swift" zugegriffen, wenn man die Daten eines registrieten Benuters von der Daten bank runterladen und im Profil anzeigen lassen will
+// Klasse, um einen Benutzer zu erstellen. Auf sie wird in der Klasse "ProfilseiteViewController.swift" zugegriffen, wenn man die Daten eines registrieten Benuters von der Daten bank runterladen und im Profil anzeigen lassen will
 class NameModel{
     var Beruf: String?
     var Vorname: String?
@@ -18,7 +17,7 @@ class NameModel{
     var Passwort: String?
     var Verfuegbarkeit: Bool?
     
-    //Created by Nina
+    // Created by Nina
     init(Beruf: String?,Vorname: String?, Id: String?, Branche: String?, EMail: String?, Interesse1: String?, Interesse2: String?, Name: String?, Passwort: String?, Verfuegbarkeit: Bool?){
         self.Beruf = Beruf
         self.Vorname = Vorname

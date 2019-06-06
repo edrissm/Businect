@@ -1,16 +1,15 @@
 //
 //  ProfilseiteViewController.swift
 //  Businect
-// Created by Nina and Edriss
+//  Created by Nina and Edriss
 //  Copyright © 2019 Scrum-Made. All rights reserved.
-//
 
 import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-//Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
+// Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
 class ProfilePageViewController: UIViewController {
     
     var refName: DatabaseReference!
@@ -32,7 +31,7 @@ class ProfilePageViewController: UIViewController {
     
     @IBOutlet weak var stateSwitch: UISwitch!
 
-    //Created by Nina
+    // Created by Nina
     @IBAction func switchAction(_ sender: UISwitch) {
         if switchOutlet.isOn == false {
             stateSwitch.setOn(false, animated:true)
@@ -42,7 +41,7 @@ class ProfilePageViewController: UIViewController {
         }
     }
     
-    //Created by Nina
+    // Created by Nina
     @objc func stateChanged(switchState: UISwitch) {
         if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
         } else {
@@ -52,7 +51,7 @@ class ProfilePageViewController: UIViewController {
     
     var user = [NameModel]()
     
-    //Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
+    // Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
     // Created by Nina and Edriss
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +88,6 @@ class ProfilePageViewController: UIViewController {
                 self.availability = benutzer.Verfuegbarkeit ?? true
                     
                 self.user.append(benutzer)
-                
-                
             }
         })
     }
@@ -99,8 +96,8 @@ class ProfilePageViewController: UIViewController {
         return Storage.storage().reference().child("images")
     }
     
-    //Wenn man auf den Button "Profilgoto anzeigen" klickt, wird das Profulfoto des eingeloggten Nutzers im UIImageVeiw angezeigt.
-    //Created by Nina 
+    // Wenn man auf den Button "Profilgoto anzeigen" klickt, wird das Profulfoto des eingeloggten Nutzers im UIImageVeiw angezeigt.
+    // Created by Nina
     @IBAction func onDownloadTapped(_ sender: Any) {
         var fotoName : String = ""
         fotoName = Auth.auth().currentUser?.email ?? ""

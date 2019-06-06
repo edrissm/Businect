@@ -1,7 +1,7 @@
 //
 //  LoginPageViewController.swift
 //  Businect
-// Created by Nina and Edriss
+//  Created by Nina and Edriss
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 

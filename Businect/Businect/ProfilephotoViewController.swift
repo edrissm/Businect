@@ -3,7 +3,6 @@
 //  Businect
 //  Created by Nina, Muqarab and Edriss
 //  Copyright © 2019 Scrum-Made. All rights reserved.
-//
 
 
 import UIKit
