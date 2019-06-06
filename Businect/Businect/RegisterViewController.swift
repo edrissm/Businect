@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  Businect
 //
-//  Created by Muqarab Afzal on 07.05.19.
+//  Created by Edriss Mosafer.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -21,24 +21,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldVorname: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPasswort: UITextField!
-    
     @IBOutlet weak var textFieldBeruf: UITextField!
     @IBOutlet weak var textFielBranche: UITextField!
     @IBOutlet weak var textFieldInteresse1: UITextField!
-    
     @IBOutlet weak var textFieldInteresse2: UITextField!
-    
     @IBOutlet weak var buttonEnablen: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     // Leitet weiter auf die Seite zum "Profilbild hochladen" und gibt dem neuen Nutzer
     // als Attribut dessen Vor- und Nachname mit.
-    @IBAction func Weiter(_ sender: Any) {
+    // Created by Edriss Mosafer.
+    @IBAction func clickContinue(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
         changeRequest?.commitChanges { (error) in
-            // ...
             print("Error in displayrewuest")
         }
     }
@@ -46,39 +42,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     // Prueft ob die eingegebene Email-Adresse zulaessig ist
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
     
-    // Prueft ob alle Informationen für das Profil eingegeben wurden und erstellt dann das Profil.
-    // Der Weiter-Button wird dann angezeigt.
+    // Prueft ob alle Informationen für das Profil eingegeben wurden und erstellt dann das Profil. Der Weiter-Button wird dann angezeigt.
     @IBAction func buttonAddUser(_ sender: UIButton) {
         if(textFieldPasswort.text!.count > 6 && isValidEmail(testStr: textFieldEmail.text!) && textFieldInteresse2.text!.count > 0 && textFieldInteresse1.text!.count > 0 && textFieldBeruf.text!.count > 0 && textFieldName.text!.count > 0 && textFieldVorname.text!.count > 0 && textFielBranche.text!.count > 0){
             addName()
             buttonEnablen.isEnabled = true
-            Weiter.isEnabled = true
+            continueButton.isEnabled = true
         } else{
             print("there was an error")
             self.errorLabel.isHidden = false
         }
     }
     
-    @IBOutlet weak var Weiter: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     
     // Registrierseite wird geladen
     override func viewDidLoad() {
         super.viewDidLoad()
-        Weiter.isEnabled = false
+        continueButton.isEnabled = false
         buttonEnablen.isEnabled = true
         refName = Database.database().reference().child("Benutzer")
-        
-        // Do any additional setup after loading the view.
     }
     
-    // Erstellt einen neuen Benutzer in der Firebase Authentication mit Email-Adresse und Passwort.
-    // Dazu wird in der Firebase Database ein Datensatz mit allen Informationen des Benutzers unter
-    // der ID des Vor- und Nachenamen gespeichert.
+    // Erstellt einen neuen Benutzer in der Firebase Authentication mit Email-Adresse und Passwort. Dazu wird in der Firebase Database ein Datensatz mit allen Informationen des Benutzers unter der ID des Vor- und Nachenamen gespeichert.
+    // Created by Edriss Mosafer.
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
@@ -101,6 +92,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // Returnbutton auf der Tastatur leitet auf das nächststehende Textfeld.
+    // Created by Edriss Mosafer.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField==textFieldName{
             textFieldVorname.becomeFirstResponder()

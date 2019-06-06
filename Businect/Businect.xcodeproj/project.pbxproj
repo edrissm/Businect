@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		212AD5E6228ACFE500BBE426 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */; };
-		212AD5E8228ADC1D00BBE426 /* ProfilseiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */; };
+		212AD5E8228ADC1D00BBE426 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E7228ADC1D00BBE426 /* ProfilePageViewController.swift */; };
 		212AD5EA228B03B900BBE426 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212AD5E9228B03B900BBE426 /* StartViewController.swift */; };
 		2166B54622840F1200E9B470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2166B54522840F1200E9B470 /* GoogleService-Info.plist */; };
 		2175242122773E20000965C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175242022773E20000965C6 /* AppDelegate.swift */; };
@@ -65,7 +65,7 @@
 /* Begin PBXFileReference section */
 		087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilseiteViewController.swift; sourceTree = "<group>"; };
+		212AD5E7228ADC1D00BBE426 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		212AD5E9228B03B900BBE426 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		2166B54522840F1200E9B470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2175241D22773E20000965C6 /* Businect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Businect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +179,7 @@
 				9F3CDAEE227CAEE0001713DB /* ProfilephotoViewController.swift */,
 				9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */,
 				212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */,
-				212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */,
+				212AD5E7228ADC1D00BBE426 /* ProfilePageViewController.swift */,
 				212AD5E9228B03B900BBE426 /* StartViewController.swift */,
 				21BA95B32297E6CE004F5FEA /* ARViewController.swift */,
 				9F764B4322A51327002719FA /* QRCodeView.swift */,
@@ -539,7 +539,7 @@
 				E268BFFD22A5171C0095BC9E /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				E268BFF922A5171C0095BC9E /* IQInvocation.swift in Sources */,
 				21BA95B42297E6CE004F5FEA /* ARViewController.swift in Sources */,
-				212AD5E8228ADC1D00BBE426 /* ProfilseiteViewController.swift in Sources */,
+				212AD5E8228ADC1D00BBE426 /* ProfilePageViewController.swift in Sources */,
 				E268BFFF22A5171C0095BC9E /* IQUIScrollView+Additions.swift in Sources */,
 				E268BFF722A5171C0095BC9E /* IQToolbar.swift in Sources */,
 				2175242322773E20000965C6 /* ViewController.swift in Sources */,

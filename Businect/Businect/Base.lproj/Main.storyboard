@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4wz-8a-VZA">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profilseite View Controller-->
+        <!--Profile Page View Controller-->
         <scene sceneID="CIv-5e-0W2">
             <objects>
-                <viewController restorationIdentifier="vcid" id="YgI-MR-L4B" customClass="ProfilseiteViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="vcid" id="YgI-MR-L4B" customClass="ProfilePageViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE0-FJ-f7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ei3-5U-8rm">
@@ -216,7 +212,7 @@
             <objects>
                 <viewController id="x86-9Y-HH9" customClass="QRCodeView" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M6p-TT-sIf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPh-7i-5yx">
@@ -253,11 +249,11 @@
             <objects>
                 <viewController id="8Bd-db-NFZ" customClass="ARViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0k0-tS-6NB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nje-ui-F0k">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -286,7 +282,7 @@
             <objects>
                 <viewController id="VNy-cz-qi7" customClass="RegisterViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhX-K1-GY0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vorname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wg-Cb-Vau">
@@ -386,7 +382,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weiter"/>
                                 <connections>
-                                    <action selector="Weiter:" destination="VNy-cz-qi7" eventType="touchUpInside" id="EoF-m5-uuj"/>
+                                    <action selector="continue:" destination="VNy-cz-qi7" eventType="touchUpInside" id="EoF-m5-uuj"/>
                                     <segue destination="8fz-6x-kp9" kind="show" id="6em-QD-OC3"/>
                                 </connections>
                             </button>
@@ -410,8 +406,8 @@
                         <viewLayoutGuide key="safeArea" id="7xh-tR-hZ7"/>
                     </view>
                     <connections>
-                        <outlet property="Weiter" destination="CDc-35-MFY" id="C5d-jM-bcP"/>
                         <outlet property="buttonEnablen" destination="W0Y-PX-c7z" id="gJL-ha-d7J"/>
+                        <outlet property="continueButton" destination="CDc-35-MFY" id="C5d-jM-bcP"/>
                         <outlet property="errorLabel" destination="PI0-6i-hnT" id="Dc9-6R-OUA"/>
                         <outlet property="textFielBranche" destination="XzV-xR-flW" id="RKO-xC-2gZ"/>
                         <outlet property="textFieldBeruf" destination="Hea-cs-Pg8" id="6WU-K3-CWp"/>
@@ -432,7 +428,7 @@
             <objects>
                 <viewController id="8fz-6x-kp9" customClass="ProfilephotoViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8J-g0-bW9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jee-7O-2yx">
@@ -497,7 +493,7 @@
             <objects>
                 <viewController id="PqR-SV-mhc" customClass="StartViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8G-LK-2Px">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSu-LS-qJ0">
@@ -574,7 +570,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail-Adresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8je-6D-hTr">

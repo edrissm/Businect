@@ -18,7 +18,7 @@ class NameModel{
     var Passwort: String?
     var Verfuegbarkeit: Bool?
     
-    
+    //Created by Nina Erlacher
     init(Beruf: String?,Vorname: String?, Id: String?, Branche: String?, EMail: String?, Interesse1: String?, Interesse2: String?, Name: String?, Passwort: String?, Verfuegbarkeit: Bool?){
         self.Beruf = Beruf
         self.Vorname = Vorname
