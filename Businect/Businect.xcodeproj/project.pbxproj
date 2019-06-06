@@ -20,7 +20,7 @@
 		21BA95B42297E6CE004F5FEA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BA95B32297E6CE004F5FEA /* ARViewController.swift */; };
 		530CFAC3E3F002910BDAB122 /* Pods_BusinectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */; };
 		9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */; };
-		9F3CDAEF227CAEE0001713DB /* ProfilbildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* ProfilbildViewController.swift */; };
+		9F3CDAEF227CAEE0001713DB /* ProfilephotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CDAEE227CAEE0001713DB /* ProfilephotoViewController.swift */; };
 		9F764B4422A51327002719FA /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764B4322A51327002719FA /* QRCodeView.swift */; };
 		AF55514C671D5B96370746DA /* Pods_BusinectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */; };
 		E23782C4228D8A2F007FF583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23782C2228D8A2F007FF583 /* Main.storyboard */; };
@@ -85,7 +85,7 @@
 		41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0E4A0DD64CCE6887B9959F /* Pods-BusinectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectUITests.release.xcconfig"; path = "Target Support Files/Pods-BusinectUITests/Pods-BusinectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		9F3CDAEE227CAEE0001713DB /* ProfilbildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilbildViewController.swift; sourceTree = "<group>"; };
+		9F3CDAEE227CAEE0001713DB /* ProfilephotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilephotoViewController.swift; sourceTree = "<group>"; };
 		9F764B4322A51327002719FA /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		A9ACB8E31450F16C41CC4BE6 /* Pods-Businect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Businect.release.xcconfig"; path = "Target Support Files/Pods-Businect/Pods-Businect.release.xcconfig"; sourceTree = "<group>"; };
 		AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Businect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +176,7 @@
 				2175242722773E21000965C6 /* Assets.xcassets */,
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
 				2175242C22773E21000965C6 /* Info.plist */,
-				9F3CDAEE227CAEE0001713DB /* ProfilbildViewController.swift */,
+				9F3CDAEE227CAEE0001713DB /* ProfilephotoViewController.swift */,
 				9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */,
 				212AD5E5228ACFE500BBE426 /* LoginPageViewController.swift */,
 				212AD5E7228ADC1D00BBE426 /* ProfilseiteViewController.swift */,
@@ -528,7 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23782CA228DA5E5007FF583 /* NameModel.swift in Sources */,
-				9F3CDAEF227CAEE0001713DB /* ProfilbildViewController.swift in Sources */,
+				9F3CDAEF227CAEE0001713DB /* ProfilephotoViewController.swift in Sources */,
 				E268BFF622A5171C0095BC9E /* IQBarButtonItem.swift in Sources */,
 				E268C00222A5171C0095BC9E /* IQUIView+Hierarchy.swift in Sources */,
 				E268C00322A5171C0095BC9E /* IQNSArray+Sort.swift in Sources */,
