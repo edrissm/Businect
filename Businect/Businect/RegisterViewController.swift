@@ -28,7 +28,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textFieldInteresse2: UITextField!
     
-   
     @IBOutlet weak var buttonEnablen: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!

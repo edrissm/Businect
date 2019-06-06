@@ -25,7 +25,7 @@ class ProfilseiteViewController: UIViewController {
     @IBOutlet weak var lblPasswort: UILabel!
     @IBOutlet weak var downloadImage: UIImageView!
     
-   var verf = Bool()
+    var availability = Bool()
     
     
     @IBOutlet weak var switchOutlet: UISwitch!
@@ -42,32 +42,25 @@ class ProfilseiteViewController: UIViewController {
         }
     }
     
-
     @objc func stateChanged(switchState: UISwitch) {
-        if switchState.isOn {
-            Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
-            print("AN")
+        if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
         } else {
               Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": false])
-            print("AUS")
-            
         }
     }
     
-    
-    var benutzerList = [NameModel]()
+    var user = [NameModel]()
     
     //Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
     override func viewDidLoad() {
         super.viewDidLoad()
            stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
-        
 
         refName = Database.database().reference().child("Benutzer");
         refName.observe(DataEventType.value, with: { (snapshot) in
             
             if snapshot.childrenCount > 0 {
-                self.benutzerList.removeAll()
+                self.user.removeAll()
                 let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
                 let nameObject = name.value as? [String: AnyObject]
                 let Beruf  = nameObject?["Beruf"]
@@ -91,9 +84,9 @@ class ProfilseiteViewController: UIViewController {
                 self.lblInteresse2.text = benutzer.Interesse2
                 self.lblName.text = benutzer.Name
                 self.lblPasswort.text = benutzer.Passwort
-                self.verf = benutzer.Verfuegbarkeit ?? true
+                self.availability = benutzer.Verfuegbarkeit ?? true
                     
-                self.benutzerList.append(benutzer)
+                self.user.append(benutzer)
                 
                 
             }
