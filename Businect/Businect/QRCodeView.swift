@@ -18,8 +18,8 @@ class QRCodeView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dataa = "https://scrummadedb.firebaseio.com/Benutzer/" + (Auth.auth().currentUser?.displayName)!
-        let data = dataa.data(using: .ascii, allowLossyConversion:true)
+        let dataURL = "https://scrummadedb.firebaseio.com/Benutzer/" + (Auth.auth().currentUser?.displayName)!
+        let data = dataURL.data(using: .ascii, allowLossyConversion:true)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter?.setValue(data, forKey:"InputMessage")
         let ciImage = filter?.outputImage
