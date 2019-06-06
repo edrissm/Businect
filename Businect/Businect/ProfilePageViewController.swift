@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 //Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
-class ProfilseiteViewController: UIViewController {
+class ProfilePageViewController: UIViewController {
     
     var refName: DatabaseReference!
     
