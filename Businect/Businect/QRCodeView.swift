@@ -64,7 +64,7 @@ class QRCodeView: UIViewController {
         shareMethod()
     }
     
-    //Funktion um einen Screenshot des QR-Codes zu machen und zu teilen
+    // Funktion um einen Screenshot des QR-Codes zu machen und zu teilen
     // Created by Muqarab
     func shareMethod(){
         Button2.isHidden = true
