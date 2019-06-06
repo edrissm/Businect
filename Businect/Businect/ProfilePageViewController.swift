@@ -32,7 +32,7 @@ class ProfilePageViewController: UIViewController {
     
     @IBOutlet weak var stateSwitch: UISwitch!
 
-    
+    //Created by Nina Erlacher
     @IBAction func switchAction(_ sender: UISwitch) {
         if switchOutlet.isOn == false {
             stateSwitch.setOn(false, animated:true)
@@ -42,6 +42,7 @@ class ProfilePageViewController: UIViewController {
         }
     }
     
+    //Created by Nina Erlacher
     @objc func stateChanged(switchState: UISwitch) {
         if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
         } else {
@@ -52,6 +53,7 @@ class ProfilePageViewController: UIViewController {
     var user = [NameModel]()
     
     //Wenn die Seite geladen wird, werden die Benutzerspezifischen Daten aus der Firebase-Datenbank geladen. Die jeweils passenden Daten werden dabei durch die Firebase-Authentifizierung erfasst.
+    //Created by Nina Erlacher
     override func viewDidLoad() {
         super.viewDidLoad()
            stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
@@ -98,6 +100,7 @@ class ProfilePageViewController: UIViewController {
     }
     
     //Wenn man auf den Button "Profilgoto anzeigen" klickt, wird das Profulfoto des eingeloggten Nutzers im UIImageVeiw angezeigt.
+    //Created by Nina Erlacher
     @IBAction func onDownloadTapped(_ sender: Any) {
         var fotoName : String = ""
         fotoName = Auth.auth().currentUser?.email ?? ""

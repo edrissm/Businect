@@ -42,6 +42,7 @@ class ProfilephotoViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     //Das Foto, welches sich im UIImageView befindet, wird auf in das Firebase-Storage geladen.
+    //Created by Nina Erlacher
     // Created by Edriss Mosafer.
     @IBAction func uploadImgToFirebase(_ sender: Any) {
             guard let image = imgImage.image else { return }
