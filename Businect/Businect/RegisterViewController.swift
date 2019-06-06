@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  Businect
 //
-//  Created by Muqarab Afzal on 07.05.19.
+//  Created by Edriss Mosafer.
 //  Copyright © 2019 Scrum-Made. All rights reserved.
 //
 
@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     // Leitet weiter auf die Seite zum "Profilbild hochladen" und gibt dem neuen Nutzer
     // als Attribut dessen Vor- und Nachname mit.
+    // Created by Edriss Mosafer.
     @IBAction func clickContinue(_ sender: Any) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = textFieldVorname.text!+textFieldName.text!
@@ -68,6 +69,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Erstellt einen neuen Benutzer in der Firebase Authentication mit Email-Adresse und Passwort. Dazu wird in der Firebase Database ein Datensatz mit allen Informationen des Benutzers unter der ID des Vor- und Nachenamen gespeichert.
+    // Created by Edriss Mosafer.
     func addName(){
         Auth.auth().createUser(withEmail: textFieldEmail.text! as String, password: textFieldPasswort.text! as String)
         
@@ -90,6 +92,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // Returnbutton auf der Tastatur leitet auf das nächststehende Textfeld.
+    // Created by Edriss Mosafer.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField==textFieldName{
             textFieldVorname.becomeFirstResponder()
