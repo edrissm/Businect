@@ -12,7 +12,7 @@ import FirebaseStorage
 
 
 //Klasse, um ein Profilfoto aus der Gallerie des Smart-Phones auszuwählen und dieses dann zu in das Storage der Firebase- Datenbank hochzuladen.
-class imageGallery: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfilbildViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var imgImage: UIImageView!   //Wo ausgewählte Profilfoto angezeigt wird

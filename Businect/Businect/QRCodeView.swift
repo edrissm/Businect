@@ -129,4 +129,3 @@ class QRCodeView: UIViewController {
     
     
 }
-

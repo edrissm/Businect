@@ -13,6 +13,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+// ViewController, welche die Kamera öffnet und automatisch nach QR-Codes scannt und diese mit
+// den Nutzerinformationen augmented anzeigt.
 class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
@@ -27,7 +29,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var lInteresse2 = ""
     var lVerfügbarkeit = true
    
-    
+    // Zeigt die eigenen Benutzerinformationen augmented an.
     override func viewDidLoad() {
         super.viewDidLoad()
         

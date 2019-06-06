@@ -427,10 +427,10 @@
             </objects>
             <point key="canvasLocation" x="-746.39999999999998" y="-52.463054187192121"/>
         </scene>
-        <!--Image Gallery-->
+        <!--Profilbild View Controller-->
         <scene sceneID="K7k-kx-CPp">
             <objects>
-                <viewController id="8fz-6x-kp9" customClass="imageGallery" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8fz-6x-kp9" customClass="ProfilbildViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8J-g0-bW9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -646,6 +646,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eE9-nb-Ubk"/>
-        <segue reference="QYG-tT-IKs"/>
+        <segue reference="2Uh-kY-UhT"/>
     </inferredMetricsTieBreakers>
 </document>
