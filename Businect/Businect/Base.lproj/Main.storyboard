@@ -228,9 +228,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGs-ow-C2p">
-                                <rect key="frame" x="168" y="521" width="38" height="30"/>
+                                <rect key="frame" x="167" y="521" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="share"/>
+                                <state key="normal" title="Teilen"/>
                                 <connections>
                                     <action selector="buttonShareWith_sender:" destination="x86-9Y-HH9" eventType="touchDragInside" id="gmd-JU-gpI"/>
                                 </connections>
@@ -281,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="101.59999999999999" y="998.27586206896558"/>
         </scene>
-        <!--View Controller-->
+        <!--Scanner View Controller-->
         <scene sceneID="nbX-K6-xCe">
             <objects>
-                <viewController id="sDg-zf-lV8" sceneMemberID="viewController">
+                <viewController id="sDg-zf-lV8" customClass="QRScannerViewController" customModule="Businect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nkI-yo-sfu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQn-Ke-v5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="635"/>
+            <point key="canvasLocation" x="1004.3478260869566" y="634.82142857142856"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="DCt-pc-8Y1">
@@ -561,11 +561,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J11-XF-guo">
-                                <rect key="frame" x="163" y="640" width="30" height="30"/>
+                                <rect key="frame" x="137" y="640" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="AR"/>
+                                <state key="normal" title="QR Scanner"/>
                                 <connections>
-                                    <segue destination="8Bd-db-NFZ" kind="show" id="XEp-qD-Uxw"/>
+                                    <segue destination="sDg-zf-lV8" kind="show" id="1Kn-gV-QNZ"/>
                                 </connections>
                             </button>
                         </subviews>

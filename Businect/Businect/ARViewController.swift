@@ -36,7 +36,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     // Created by Nina, Edriss and Muqarab
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         //Firebase Benutzerdaten runterladen
         refName = Database.database().reference().child("Benutzer");
         refName.observe(DataEventType.value, with: { (snapshot) in
@@ -96,8 +96,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
             }
         })
         sceneView.delegate = self
-        */
         
+        /*
         //Creating session
         let session = AVCaptureSession()
         
@@ -124,9 +124,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         view.layer.addSublayer(video)
         //session starten
         session.startRunning()
-        
+        */
     }
-    /*
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
@@ -152,7 +152,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
-    */
+    /*
     // Falls ein QR Code erkannt wurde, wird eine Benachrichtigung mit dessen Inhalt ausgegeben als eine Benachrichtigung.
     // Created by Edriss
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -167,5 +167,5 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                 }
             }
         }
-    }
+    }*/
 }
