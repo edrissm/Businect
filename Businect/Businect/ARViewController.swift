@@ -63,6 +63,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
          //set frame
          video.frame = backview.layer.bounds
          backview.layer.addSublayer(video)
+        backview.isHidden = false
          //session starten
          session.startRunning()
  
@@ -130,13 +131,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let configuration = ARWorldTrackingConfiguration()
-        sceneView.session.run(configuration)
+        //let configuration = ARWorldTrackingConfiguration()
+        //sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        sceneView.session.pause()
+        //sceneView.session.pause()
     }
    
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -153,7 +154,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
-    
+ 
     // Falls ein QR Code erkannt wurde, wird eine Benachrichtigung mit dessen Inhalt ausgegeben als eine Benachrichtigung.
     // Created by Edriss
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -163,7 +164,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
-                    
+                    let configuration = ARWorldTrackingConfiguration()
+                    sceneView.session.run(configuration)
+                    backview.isHidden = true
                     present(alert, animated: true, completion: nil)
                 }
             }

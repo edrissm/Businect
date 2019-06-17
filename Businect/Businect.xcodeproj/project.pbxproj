@@ -17,7 +17,6 @@
 		2175242B22773E21000965C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2175242922773E21000965C6 /* LaunchScreen.storyboard */; };
 		2175243622773E22000965C6 /* BusinectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175243522773E22000965C6 /* BusinectTests.swift */; };
 		2175244122773E22000965C6 /* BusinectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175244022773E22000965C6 /* BusinectUITests.swift */; };
-		21AEEA5A22B786340086C6E7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AEEA5922B786340086C6E7 /* QRScannerViewController.swift */; };
 		21BA95B42297E6CE004F5FEA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BA95B32297E6CE004F5FEA /* ARViewController.swift */; };
 		530CFAC3E3F002910BDAB122 /* Pods_BusinectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087CE2B96436CEEDDA98EC1C /* Pods_BusinectUITests.framework */; };
 		9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FD35B2281CD120045ADD6 /* RegisterViewController.swift */; };
@@ -82,8 +81,7 @@
 		2175243C22773E22000965C6 /* BusinectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2175244022773E22000965C6 /* BusinectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinectUITests.swift; sourceTree = "<group>"; };
 		2175244222773E22000965C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21AEEA5922B786340086C6E7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
-		21BA95B32297E6CE004F5FEA /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		21BA95B32297E6CE004F5FEA /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2AA8035FC6EC0A046A429371 /* Pods-BusinectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectTests.debug.xcconfig"; path = "Target Support Files/Pods-BusinectTests/Pods-BusinectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41AC9724207D6AF89342F598 /* Pods_BusinectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0E4A0DD64CCE6887B9959F /* Pods-BusinectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectUITests.release.xcconfig"; path = "Target Support Files/Pods-BusinectUITests/Pods-BusinectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				212AD5E9228B03B900BBE426 /* StartViewController.swift */,
 				9F764B4322A51327002719FA /* QRCodeView.swift */,
 				21BA95B32297E6CE004F5FEA /* ARViewController.swift */,
-				21AEEA5922B786340086C6E7 /* QRScannerViewController.swift */,
 			);
 			path = Businect;
 			sourceTree = "<group>";
@@ -556,7 +553,6 @@
 				E268C00022A5171C0095BC9E /* IQUIViewController+Additions.swift in Sources */,
 				E268BFF422A5171C0095BC9E /* IQPreviousNextView.swift in Sources */,
 				E268BFF322A5171C0095BC9E /* IQTextView.swift in Sources */,
-				21AEEA5A22B786340086C6E7 /* QRScannerViewController.swift in Sources */,
 				E285DCA422B78F1400EEA8AE /* ChangeDataViewController.swift in Sources */,
 				212AD5E6228ACFE500BBE426 /* LoginPageViewController.swift in Sources */,
 				E268BFF822A5171C0095BC9E /* IQUIView+IQKeyboardToolbar.swift in Sources */,
