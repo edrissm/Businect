@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import SceneKit
 
-class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
 
     //Videoanzeige der Kamera
     var video = AVCaptureVideoPreviewLayer()
@@ -51,10 +52,16 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if metadataObjects != nil && metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == AVMetadataObject.ObjectType.qr{
+                    print("Wechsel")
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "your_VC_ID") as! ARViewController
+                    self.present(vc, animated: true, completion: nil)
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
-                    
+                    print("kein Wechsel")
+                    //let vc = ARViewController()
+                    //self.present(vc, animated: true, completion: nil)
                     present(alert, animated: true, completion: nil)
                 }
             }
