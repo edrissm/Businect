@@ -43,6 +43,7 @@
 		E268C00122A5171C0095BC9E /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268BFF022A5171C0095BC9E /* IQUITextFieldView+Additions.swift */; };
 		E268C00222A5171C0095BC9E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268BFF122A5171C0095BC9E /* IQUIView+Hierarchy.swift */; };
 		E268C00322A5171C0095BC9E /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268BFF222A5171C0095BC9E /* IQNSArray+Sort.swift */; };
+		E285DCA422B78F1400EEA8AE /* ChangeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285DCA322B78F1400EEA8AE /* ChangeDataViewController.swift */; };
 		F90102BB3DE349BDC5EB212D /* Pods_Businect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7D7113444F7A4894F61B66 /* Pods_Businect.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		E268BFF022A5171C0095BC9E /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		E268BFF122A5171C0095BC9E /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		E268BFF222A5171C0095BC9E /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		E285DCA322B78F1400EEA8AE /* ChangeDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataViewController.swift; sourceTree = "<group>"; };
 		F1DE83B34C463B2F626F3EC8 /* Pods-BusinectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinectTests.release.xcconfig"; path = "Target Support Files/Pods-BusinectTests/Pods-BusinectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				2175242022773E20000965C6 /* AppDelegate.swift */,
 				2175242222773E20000965C6 /* ViewController.swift */,
 				E23782C2228D8A2F007FF583 /* Main.storyboard */,
+				E285DCA322B78F1400EEA8AE /* ChangeDataViewController.swift */,
 				E23782C9228DA5E5007FF583 /* NameModel.swift */,
 				2175242722773E21000965C6 /* Assets.xcassets */,
 				2175242922773E21000965C6 /* LaunchScreen.storyboard */,
@@ -554,6 +557,7 @@
 				E268BFF422A5171C0095BC9E /* IQPreviousNextView.swift in Sources */,
 				E268BFF322A5171C0095BC9E /* IQTextView.swift in Sources */,
 				21AEEA5A22B786340086C6E7 /* QRScannerViewController.swift in Sources */,
+				E285DCA422B78F1400EEA8AE /* ChangeDataViewController.swift in Sources */,
 				212AD5E6228ACFE500BBE426 /* LoginPageViewController.swift in Sources */,
 				E268BFF822A5171C0095BC9E /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				9F0FD35C2281CD120045ADD6 /* RegisterViewController.swift in Sources */,
