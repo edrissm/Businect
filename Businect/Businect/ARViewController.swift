@@ -27,7 +27,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     var tempBranche = ""
     var tempInteresse1 = ""
     var tempInteresse2 = ""
-    var tempVerfügbarkeit = true
+    var tempVerfuegbarkeit = true
     
     //Videoanzeige der Kamera
     var video = AVCaptureVideoPreviewLayer()

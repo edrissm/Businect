@@ -41,11 +41,13 @@ class ProfilePageViewController: UIViewController {
         }
     }
     
+    
+    
     // Created by Nina
     @objc func stateChanged(switchState: UISwitch) {
-        if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": true])
+        if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfuegbarkeit": true])
         } else {
-              Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfügbarkeit": false])
+              Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfuegbarkeit": false])
         }
     }
     
@@ -56,9 +58,13 @@ class ProfilePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
            stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
-
-        refName = Database.database().reference().child("Benutzer");
-        refName.observe(DataEventType.value, with: { (snapshot) in
+        
+      
+        
+            refName = Database.database().reference().child("Benutzer");
+            refName.observe(DataEventType.value, with: { (snapshot) in
+                
+               
             
             if snapshot.childrenCount > 0 {
                 self.user.removeAll()
@@ -86,8 +92,16 @@ class ProfilePageViewController: UIViewController {
                 self.lblName.text = benutzer.Name
                 self.lblPasswort.text = benutzer.Passwort
                 self.availability = benutzer.Verfuegbarkeit ?? true
-                    
+        
+                if(benutzer.Verfuegbarkeit == false){
+                    print("hallo")
+                    self.stateSwitch.setOn(false, animated:true)
+                    }else {
+                    self.stateSwitch.setOn(true, animated:true)
+                    }
                 self.user.append(benutzer)
+        
+            
             }
         })
     }
