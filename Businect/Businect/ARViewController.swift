@@ -18,6 +18,7 @@ import AVFoundation
 class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var backview: UIView!
     
     var refName: DatabaseReference!
     var user = [NameModel]()
@@ -36,6 +37,35 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     // Created by Nina, Edriss and Muqarab
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+         //Creating session
+         let session = AVCaptureSession()
+         
+         //Define capture device
+         let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
+         
+         //add the capture device to our session
+         do{
+         let input = try AVCaptureDeviceInput(device: captureDevice)
+         session.addInput(input)
+         }
+         catch{
+         print("ERROR")
+         }
+         
+         let output = AVCaptureMetadataOutput()
+         //add the session
+         session.addOutput(output)
+         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+         output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+         video = AVCaptureVideoPreviewLayer(session: session)
+         //set frame
+         video.frame = backview.layer.bounds
+         backview.layer.addSublayer(video)
+         //session starten
+         session.startRunning()
+ 
         
         //Firebase Benutzerdaten runterladen
         refName = Database.database().reference().child("Benutzer");
@@ -96,35 +126,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
             }
         })
         sceneView.delegate = self
-        
-        /*
-        //Creating session
-        let session = AVCaptureSession()
-        
-        //Define capture device
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
-        
-        //add the capture device to our session
-        do{
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            session.addInput(input)
-        }
-        catch{
-            print("ERROR")
-        }
-        
-        let output = AVCaptureMetadataOutput()
-        //add the session
-        session.addOutput(output)
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-        video = AVCaptureVideoPreviewLayer(session: session)
-        //set frame
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-        //session starten
-        session.startRunning()
-        */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -152,7 +153,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
-    /*
+    
     // Falls ein QR Code erkannt wurde, wird eine Benachrichtigung mit dessen Inhalt ausgegeben als eine Benachrichtigung.
     // Created by Edriss
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -167,5 +168,5 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                 }
             }
         }
-    }*/
+    }
 }

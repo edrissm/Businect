@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQW-qR-fkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1679.2" y="715.27093596059115"/>
+            <point key="canvasLocation" x="-1679.7101449275362" y="715.17857142857144"/>
         </scene>
         <!--Code View-->
         <scene sceneID="OIl-9R-cKM">
@@ -259,6 +259,11 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nje-ui-F0k">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </arscnView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-4f-wfx">
+                                <rect key="frame" x="87" y="197" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -274,6 +279,7 @@
                         <viewLayoutGuide key="safeArea" id="nO9-JI-tRi"/>
                     </view>
                     <connections>
+                        <outlet property="backview" destination="zzM-4f-wfx" id="Pgi-AW-cbJ"/>
                         <outlet property="sceneView" destination="nje-ui-F0k" id="IUT-CO-q36"/>
                     </connections>
                 </viewController>
@@ -288,9 +294,19 @@
                     <view key="view" contentMode="scaleToFill" id="nkI-yo-sfu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62N-P0-WWF">
+                                <rect key="frame" x="87" y="124" width="240" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="l2s-jy-4DZ"/>
                     </view>
+                    <connections>
+                        <outlet property="backview" destination="62N-P0-WWF" id="EFa-kc-1xu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQn-Ke-v5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,7 +581,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="QR Scanner"/>
                                 <connections>
-                                    <segue destination="sDg-zf-lV8" kind="show" id="1Kn-gV-QNZ"/>
+                                    <segue destination="8Bd-db-NFZ" kind="show" id="P3P-hD-Dqy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -660,7 +676,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="es0-E8-frQ"/>
+        <segue reference="eE9-nb-Ubk"/>
         <segue reference="QYG-tT-IKs"/>
     </inferredMetricsTieBreakers>
 </document>

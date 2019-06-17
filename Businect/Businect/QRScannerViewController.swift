@@ -9,11 +9,14 @@
 import UIKit
 import AVFoundation
 import SceneKit
+import ARKit
 
-class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
+class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, ARSCNViewDelegate{
 
     //Videoanzeige der Kamera
     var video = AVCaptureVideoPreviewLayer()
+    
+    @IBOutlet weak var backview: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         do{
             let input = try AVCaptureDeviceInput(device: captureDevice)
             session.addInput(input)
+          
         }
         catch{
             print("ERROR")
@@ -40,8 +44,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         video = AVCaptureVideoPreviewLayer(session: session)
         //set frame
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
+        video.frame = backview.layer.bounds
+        backview.layer.addSublayer(video)
         //session starten
         session.startRunning()
     }
@@ -52,16 +56,10 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if metadataObjects != nil && metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == AVMetadataObject.ObjectType.qr{
-                    print("Wechsel")
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "your_VC_ID") as! ARViewController
-                    self.present(vc, animated: true, completion: nil)
+                    print("QR gescannt")
                     let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
-                    print("kein Wechsel")
-                    //let vc = ARViewController()
-                    //self.present(vc, animated: true, completion: nil)
                     present(alert, animated: true, completion: nil)
                 }
             }
