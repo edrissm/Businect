@@ -68,65 +68,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
          session.startRunning()
  
         
-        //Firebase Benutzerdaten runterladen
-        refName = Database.database().reference().child("Benutzer");
-        refName.observe(DataEventType.value, with: { (snapshot) in
-            
-            if snapshot.childrenCount > 0 {
-                self.user.removeAll()
-                let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
-                let nameObject = name.value as? [String: AnyObject]
-                let Beruf  = nameObject?["Beruf"]
-                let Vorname  = nameObject?["Vorname"]
-                let Id = nameObject?["Id"]
-                let Branche = nameObject?["Branche"]
-                let EMail = nameObject?["EMail"]
-                let Interesse1 = nameObject?["Interesse1"]
-                let Interesse2 = nameObject?["Interesse2"]
-                let Name = nameObject?["Name"]
-                let Passwort = nameObject?["Passwort"]
-                let Verfuegbarkeit = nameObject?["Verfügbarkeit"]
-                 
-                let userData = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
-                
-                self.tempVorname = userData.Vorname!
-                self.tempName = userData.Name!
-                self.tempBeruf =  userData.Beruf!
-                self.tempBranche = userData.Branche!
-                self.tempInteresse1 = userData.Interesse1!
-                self.tempInteresse2 = userData.Interesse2!
-                self.tempVerfuegbarkeit = userData.Verfuegbarkeit!
-                
-                
-                let material = SCNMaterial()
-                if self.tempVerfuegbarkeit==true{
-                    let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
-                    print(self.tempVorname)
-                    material.diffuse.contents = UIColor.green
-                    text.materials = [material]
-                    let node = SCNNode()
-                    node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
-                    node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
-                    node.geometry = text
-                    self.sceneView.scene.rootNode.addChildNode(node)
-                    self.sceneView.autoenablesDefaultLighting = true
-                    self.user.append(userData)
-                } else{
-                    let text = SCNText(string: "Nicht Verfügbar", extrusionDepth: 1)
-                    print(self.tempVorname)
-                    material.diffuse.contents = UIColor.red
-                    text.materials = [material]
-                    let node = SCNNode()
-                    node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
-                    node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
-                    node.geometry = text
-                    self.sceneView.scene.rootNode.addChildNode(node)
-                    self.sceneView.autoenablesDefaultLighting = true
-                    self.user.append(userData)
-                }
-            }
-        })
-        sceneView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,6 +109,67 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                     let configuration = ARWorldTrackingConfiguration()
                     sceneView.session.run(configuration)
                     backview.isHidden = true
+                    
+                    //Firebase Benutzerdaten runterladen
+                    refName = Database.database().reference().child("Benutzer");
+                    refName.observe(DataEventType.value, with: { (snapshot) in
+                        
+                        if snapshot.childrenCount > 0 {
+                            self.user.removeAll()
+                            let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
+                            let nameObject = name.value as? [String: AnyObject]
+                            let Beruf  = nameObject?["Beruf"]
+                            let Vorname  = nameObject?["Vorname"]
+                            let Id = nameObject?["Id"]
+                            let Branche = nameObject?["Branche"]
+                            let EMail = nameObject?["EMail"]
+                            let Interesse1 = nameObject?["Interesse1"]
+                            let Interesse2 = nameObject?["Interesse2"]
+                            let Name = nameObject?["Name"]
+                            let Passwort = nameObject?["Passwort"]
+                            let Verfuegbarkeit = nameObject?["Verfügbarkeit"]
+                            
+                            let userData = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
+                            
+                            self.tempVorname = userData.Vorname!
+                            self.tempName = userData.Name!
+                            self.tempBeruf =  userData.Beruf!
+                            self.tempBranche = userData.Branche!
+                            self.tempInteresse1 = userData.Interesse1!
+                            self.tempInteresse2 = userData.Interesse2!
+                            self.tempVerfuegbarkeit = userData.Verfuegbarkeit!
+                            
+                            
+                            let material = SCNMaterial()
+                            if self.tempVerfuegbarkeit==true{
+                                let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
+                                print(self.tempVorname)
+                                material.diffuse.contents = UIColor.green
+                                text.materials = [material]
+                                let node = SCNNode()
+                                node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
+                                node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
+                                node.geometry = text
+                                self.sceneView.scene.rootNode.addChildNode(node)
+                                self.sceneView.autoenablesDefaultLighting = true
+                                self.user.append(userData)
+                            } else{
+                                let text = SCNText(string: "Nicht Verfügbar", extrusionDepth: 1)
+                                print(self.tempVorname)
+                                material.diffuse.contents = UIColor.red
+                                text.materials = [material]
+                                let node = SCNNode()
+                                node.position = SCNVector3(x: 0, y: 0.02, z: -0.1)
+                                node.scale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
+                                node.geometry = text
+                                self.sceneView.scene.rootNode.addChildNode(node)
+                                self.sceneView.autoenablesDefaultLighting = true
+                                self.user.append(userData)
+                            }
+                        }
+                    })
+                    sceneView.delegate = self
+                    
                     present(alert, animated: true, completion: nil)
                 }
             }
