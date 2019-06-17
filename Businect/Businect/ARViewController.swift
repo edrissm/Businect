@@ -28,7 +28,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     var tempBranche = ""
     var tempInteresse1 = ""
     var tempInteresse2 = ""
-    var tempVerfügbarkeit = true
+    var tempVerfuegbarkeit = true
     
     //Videoanzeige der Kamera
     var video = AVCaptureVideoPreviewLayer()
@@ -94,11 +94,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                 self.tempBranche = userData.Branche!
                 self.tempInteresse1 = userData.Interesse1!
                 self.tempInteresse2 = userData.Interesse2!
-                self.tempVerfügbarkeit = userData.Verfuegbarkeit!
+                self.tempVerfuegbarkeit = userData.Verfuegbarkeit!
                 
                 
                 let material = SCNMaterial()
-                if self.tempVerfügbarkeit==true{
+                if self.tempVerfuegbarkeit==true{
                     let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
                     print(self.tempVorname)
                     material.diffuse.contents = UIColor.green
