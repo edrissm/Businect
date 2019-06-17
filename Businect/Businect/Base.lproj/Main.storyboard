@@ -663,6 +663,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v6Z-vF-3La"/>
                     <connections>
+                        <outlet property="QRScanner" destination="J11-XF-guo" id="MPA-My-B4q"/>
                         <outlet property="loginButton" destination="ggS-ep-U8E" id="2l1-ID-MFR"/>
                         <outlet property="logoutButton" destination="MSu-LS-qJ0" id="Xr3-MG-6hC"/>
                         <outlet property="profileLink" destination="p4z-Gl-PTJ" id="JCF-Ej-LvO"/>
