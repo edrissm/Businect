@@ -21,7 +21,6 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var lblInteresse1: UILabel!
     @IBOutlet weak var lblInteresse2: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblPasswort: UILabel!
     @IBOutlet weak var downloadImage: UIImageView!
     
     var availability = Bool()
@@ -90,7 +89,6 @@ class ProfilePageViewController: UIViewController {
                 self.lblInteresse1.text = benutzer.Interesse1
                 self.lblInteresse2.text = benutzer.Interesse2
                 self.lblName.text = benutzer.Name
-                self.lblPasswort.text = benutzer.Passwort
                 self.availability = benutzer.Verfuegbarkeit ?? true
         
                 if(benutzer.Verfuegbarkeit == false){
