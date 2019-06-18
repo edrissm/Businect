@@ -162,13 +162,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-mZ-6v6">
-                                <rect key="frame" x="127" y="630" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-Mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYW-dH-9Wu">
                                 <rect key="frame" x="24" y="486" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,10 +197,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passwort:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvM-Du-UAc">
-                                <rect key="frame" x="24" y="630" width="83" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vorname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWT-iH-Px9">
+                                <rect key="frame" x="0.0" y="414" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -245,14 +238,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIp-97-7Bg">
-                                <rect key="frame" x="41" y="391" width="129" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profilfoto anzeigen"/>
-                                <connections>
-                                    <action selector="onDownloadTapped:" destination="YgI-MR-L4B" eventType="touchUpInside" id="KPf-OX-dyY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoD-Oz-xUd">
                                 <rect key="frame" x="224" y="391" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -261,13 +246,22 @@
                                     <segue destination="x86-9Y-HH9" kind="show" id="v9l-js-6tp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vorname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWT-iH-Px9">
-                                <rect key="frame" x="0.0" y="414" width="374" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kch-Jd-24I">
+                                <rect key="frame" x="7" y="376" width="144" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Profilfoto hinzufügen"/>
+                                <connections>
+                                    <segue destination="8fz-6x-kp9" kind="show" id="xZj-vl-lBO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIp-97-7Bg">
+                                <rect key="frame" x="16" y="423" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profilfoto anzeigen"/>
+                                <connections>
+                                    <action selector="onDownloadTapped:" destination="YgI-MR-L4B" eventType="touchUpInside" id="KPf-OX-dyY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
@@ -285,7 +279,6 @@
                         <outlet property="lblInteresse1" destination="U1d-5J-bop" id="aJh-TX-1dT"/>
                         <outlet property="lblInteresse2" destination="U9L-a6-xfe" id="nXD-vs-tdj"/>
                         <outlet property="lblName" destination="Db2-BU-UvH" id="V5T-gC-EEa"/>
-                        <outlet property="lblPasswort" destination="Bga-mZ-6v6" id="HeM-rV-SVO"/>
                         <outlet property="lblVorname" destination="cWT-iH-Px9" id="R6j-Hy-fVk"/>
                         <outlet property="stateSwitch" destination="5SJ-WX-9yH" id="dXr-KD-k1e"/>
                         <outlet property="switchOutlet" destination="5SJ-WX-9yH" id="qLo-ht-O1F"/>
@@ -369,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyf-Wz-o4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.44927536231884" y="997.76785714285711"/>
+            <point key="canvasLocation" x="-94" y="711"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="DCt-pc-8Y1">
@@ -471,15 +464,6 @@
                                     <outlet property="delegate" destination="VNy-cz-qi7" id="9lt-HU-Nzj"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDc-35-MFY">
-                                <rect key="frame" x="125" y="697" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Weiter"/>
-                                <connections>
-                                    <action selector="clickContinue:" destination="VNy-cz-qi7" eventType="touchUpInside" id="FeZ-zB-fi0"/>
-                                    <segue destination="8fz-6x-kp9" kind="show" id="6em-QD-OC3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0Y-PX-c7z">
                                 <rect key="frame" x="112" y="640" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -495,6 +479,15 @@
                                 <color key="textColor" red="0.99949318170547485" green="0.0055893310345709324" blue="0.22586360573768616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDc-35-MFY">
+                                <rect key="frame" x="0.0" y="697" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Registrierung abschließen"/>
+                                <connections>
+                                    <action selector="clickContinue:" destination="VNy-cz-qi7" eventType="touchUpInside" id="FeZ-zB-fi0"/>
+                                    <segue destination="YgI-MR-L4B" kind="show" id="2eO-Mw-Fug"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7xh-tR-hZ7"/>
@@ -542,9 +535,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usG-Re-yHk">
-                                <rect key="frame" x="99" y="630" width="179" height="30"/>
+                                <rect key="frame" x="121" y="630" width="135" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Registrierung abschließen"/>
+                                <state key="normal" title="Profilfoto speichern"/>
                                 <connections>
                                     <action selector="uploadImgToFirebase:" destination="8fz-6x-kp9" eventType="touchUpInside" id="rKP-Nv-oiG"/>
                                     <segue destination="YgI-MR-L4B" kind="popoverPresentation" popoverAnchorView="usG-Re-yHk" id="2Uh-kY-UhT">
@@ -740,6 +733,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eE9-nb-Ubk"/>
-        <segue reference="QYG-tT-IKs"/>
+        <segue reference="2eO-Mw-Fug"/>
     </inferredMetricsTieBreakers>
 </document>
