@@ -246,14 +246,6 @@
                                     <segue destination="x86-9Y-HH9" kind="show" id="v9l-js-6tp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kch-Jd-24I">
-                                <rect key="frame" x="7" y="376" width="144" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profilfoto hinzufügen"/>
-                                <connections>
-                                    <segue destination="8fz-6x-kp9" kind="show" id="xZj-vl-lBO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIp-97-7Bg">
                                 <rect key="frame" x="16" y="423" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -482,10 +474,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDc-35-MFY">
                                 <rect key="frame" x="0.0" y="697" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Registrierung abschließen"/>
+                                <state key="normal" title="Weiter"/>
                                 <connections>
                                     <action selector="clickContinue:" destination="VNy-cz-qi7" eventType="touchUpInside" id="FeZ-zB-fi0"/>
-                                    <segue destination="YgI-MR-L4B" kind="show" id="2eO-Mw-Fug"/>
+                                    <segue destination="8fz-6x-kp9" kind="show" id="WK1-zb-b0P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -535,14 +527,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usG-Re-yHk">
-                                <rect key="frame" x="121" y="630" width="135" height="30"/>
+                                <rect key="frame" x="99" y="630" width="179" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profilfoto speichern"/>
+                                <state key="normal" title="Registrierung abschließen"/>
                                 <connections>
                                     <action selector="uploadImgToFirebase:" destination="8fz-6x-kp9" eventType="touchUpInside" id="rKP-Nv-oiG"/>
-                                    <segue destination="YgI-MR-L4B" kind="popoverPresentation" popoverAnchorView="usG-Re-yHk" id="2Uh-kY-UhT">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="YgI-MR-L4B" kind="show" id="dqe-CS-yan"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -733,6 +723,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eE9-nb-Ubk"/>
-        <segue reference="2eO-Mw-Fug"/>
+        <segue reference="dqe-CS-yan"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -162,7 +162,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                             let material = SCNMaterial()
                             if self.tempVerfuegbarkeit==true{
 //                                let text = SCNText(string: tempVorname + tempName, extrusionDepth: 1)
-                                let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
+                                let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBeruf: " + self.tempBeruf + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
 //                                print(self.tempVorname)
                                 material.diffuse.contents = UIColor.green
                                 text.materials = [material]

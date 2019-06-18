@@ -21,7 +21,6 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var lblInteresse1: UILabel!
     @IBOutlet weak var lblInteresse2: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblPasswort: UILabel!
     @IBOutlet weak var downloadImage: UIImageView!
     
     var availability = Bool()
@@ -30,7 +29,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var switchOutlet: UISwitch!
     
     @IBOutlet weak var stateSwitch: UISwitch!
-
+    
     // Created by Nina
     @IBAction func switchAction(_ sender: UISwitch) {
         if switchOutlet.isOn == false {
@@ -47,7 +46,7 @@ class ProfilePageViewController: UIViewController {
     @objc func stateChanged(switchState: UISwitch) {
         if switchState.isOn { Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfuegbarkeit": true])
         } else {
-              Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfuegbarkeit": false])
+            Database.database().reference().child("Benutzer").child(Auth.auth().currentUser?.displayName ?? "noDisplayName").updateChildValues(["Verfuegbarkeit": false])
         }
     }
     
@@ -57,14 +56,14 @@ class ProfilePageViewController: UIViewController {
     // Created by Nina and Edriss
     override func viewDidLoad() {
         super.viewDidLoad()
-           stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+        stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
         
-      
         
-            refName = Database.database().reference().child("Benutzer");
-            refName.observe(DataEventType.value, with: { (snapshot) in
-                
-               
+        
+        refName = Database.database().reference().child("Benutzer");
+        refName.observe(DataEventType.value, with: { (snapshot) in
+            
+            
             
             if snapshot.childrenCount > 0 {
                 self.user.removeAll()
@@ -90,22 +89,21 @@ class ProfilePageViewController: UIViewController {
                 self.lblInteresse1.text = benutzer.Interesse1
                 self.lblInteresse2.text = benutzer.Interesse2
                 self.lblName.text = benutzer.Name
-                self.lblPasswort.text = benutzer.Passwort
                 self.availability = benutzer.Verfuegbarkeit ?? true
-        
+                
                 if(benutzer.Verfuegbarkeit == false){
                     print("hallo")
                     self.stateSwitch.setOn(false, animated:true)
-                    }else {
+                }else {
                     self.stateSwitch.setOn(true, animated:true)
-                    }
+                }
                 self.user.append(benutzer)
-        
-            
+                
+                
             }
         })
     }
-   
+    
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
@@ -130,6 +128,6 @@ class ProfilePageViewController: UIViewController {
         downloadtask.resume()
     }
     
-  
-
+    
+    
 }

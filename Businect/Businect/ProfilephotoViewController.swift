@@ -41,25 +41,25 @@ class ProfilephotoViewController: UIViewController, UIImagePickerControllerDeleg
         pickImageEnable.isEnabled = false
         finishRegistrationEnablen.isEnabled = true
     }
-
+    
     // Das Foto, welches sich im UIImageView befindet, wird auf in das Firebase-Storage geladen.
     // Created by Nina and Edriss
     @IBAction func uploadImgToFirebase(_ sender: Any) {
-            guard let image = imgImage.image else { return }
-            guard let imageData2 = image.pngData() else { return }
-            var fotoName : String = ""
-            fotoName = Auth.auth().currentUser?.email ?? ""
-            let dateiFormat = ".png"
-            let uploadImageRef = imageReference.child(fotoName+dateiFormat)
-            let uploadTask = uploadImageRef.putData(imageData2, metadata: nil) { (metadata, error) in
-                print("UPLOAD TASK FINISHED")
-                print(metadata ?? "NO METADATA")
-                print(error ?? "NO ERROR")
-            }
-            uploadTask.observe(.progress){ (snapshot) in
-                print(snapshot.progress ?? "NO MORE PROGRESS")
-            }
-            uploadTask.resume()
+        guard let image = imgImage.image else { return }
+        guard let imageData2 = image.pngData() else { return }
+        var fotoName : String = ""
+        fotoName = Auth.auth().currentUser?.email ?? ""
+        let dateiFormat = ".png"
+        let uploadImageRef = imageReference.child(fotoName+dateiFormat)
+        let uploadTask = uploadImageRef.putData(imageData2, metadata: nil) { (metadata, error) in
+            print("UPLOAD TASK FINISHED")
+            print(metadata ?? "NO METADATA")
+            print(error ?? "NO ERROR")
+        }
+        uploadTask.observe(.progress){ (snapshot) in
+            print(snapshot.progress ?? "NO MORE PROGRESS")
+        }
+        uploadTask.resume()
     }
     
     // Durch klicken auf den Button "Profilfoto asuwählen" wir die Galerie des Bentuzers geöfnet.
