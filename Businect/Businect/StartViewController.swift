@@ -16,6 +16,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var profileLink: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var QRScanner: UIButton!
     
     // Startseite wird geladen
     override func viewDidLoad() {
@@ -31,11 +32,13 @@ class StartViewController: UIViewController {
             self.loginButton.isEnabled = false
             self.logoutButton.isEnabled = true
             self.profileLink.isEnabled = true
+            self.QRScanner.isEnabled = true
         } else {
             self.registerButton.isEnabled = true
             self.loginButton.isEnabled = true
             self.logoutButton.isEnabled = false
             self.profileLink.isEnabled = false
+            self.QRScanner.isEnabled = false
         }
     }
 
@@ -49,6 +52,7 @@ class StartViewController: UIViewController {
                 self.loginButton.isEnabled = true
                 self.logoutButton.isEnabled = false
                 self.profileLink.isEnabled = false
+                self.QRScanner.isEnabled = false
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
