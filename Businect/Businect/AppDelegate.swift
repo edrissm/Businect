@@ -36,11 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
             }
             
             guard let uid = user?.uid else { return }
+            guard let email = user?.email else { return }
+            guard let username = user?.displayName else { return }
+            
             print("Successfully logged into Firebase with Google", uid)
            self.userDefault.set(true, forKey: "usersignedIn")
           self.userDefault.synchronize()
-        
-            
+            let values = ["Beruf": "" , "Branche": "" ,"EMail" :email,"Interesse1": "" ,"Interesse2": "" ,"Name": "" ,"Passwort": "" , "Verfuegbarkeit": true ,"Vorname": username ] as [String : Any]
+            Database.database().reference().child("Benutzer").child(username).updateChildValues(values, withCompletionBlock: { (errror, ref) in
+                
+            })
         })
       
     }

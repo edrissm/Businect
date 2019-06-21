@@ -8,7 +8,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-
+import GoogleSignIn
 // Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
 class ProfilePageViewController: UIViewController {
     
@@ -69,7 +69,7 @@ class ProfilePageViewController: UIViewController {
                 self.user.removeAll()
                 let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
                 let nameObject = name.value as? [String: AnyObject]
-                let Beruf  = nameObject?["Beruf"]
+                let Beruf  = nameObject?["w"]
                 let Vorname  = nameObject?["Vorname"]
                 let Id = nameObject?["Id"]
                 let Branche = nameObject?["Branche"]
