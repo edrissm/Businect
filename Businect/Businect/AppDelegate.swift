@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     let userDefault = UserDefaults()
     var window: UIWindow?
     func present(_ viewControllerToPresent: UIViewController,
@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Successfully logged into Firebase with Google", uid)
            self.userDefault.set(true, forKey: "usersignedIn")
           self.userDefault.synchronize()
+        
             
         })
       

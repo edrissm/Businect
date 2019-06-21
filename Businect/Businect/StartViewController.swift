@@ -7,7 +7,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-
+import GoogleSignIn
 // Der StartViewController ist die Startseite der Businect-App und leitet das Login und Logout
 // sowie das Registrieren und den Link zur Profilseite ein.
 class StartViewController: UIViewController {
@@ -48,6 +48,7 @@ class StartViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             do{
                 try Auth.auth().signOut()
+                try GIDSignIn.sharedInstance()?.signOut()
                 self.registerButton.isEnabled = true
                 self.loginButton.isEnabled = true
                 self.logoutButton.isEnabled = false
