@@ -7,10 +7,10 @@
 
 import UIKit
 import FirebaseAuth
-
+import GoogleSignIn
 // Der LoginPageViewController zeigt ein Anmeldefenster mit Eingabe der Email und des Passwortes.
 // Nur registrierte Nutzer, die in der Firebase Authentication registriert wurden, koennen sich anmelden.
-class LoginPageViewController: UIViewController, UITextFieldDelegate {
+class LoginPageViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate{
 
   
     @IBOutlet weak var usernameTextField: UITextField!
@@ -20,9 +20,16 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     // Anmeldefenster wird geladen
     override func viewDidLoad() {
         super.viewDidLoad()
-
+setupGoogleButtons()
     }
-    
+    fileprivate func setupGoogleButtons() {
+        //add google sign in button
+        let googleButton = GIDSignInButton()
+        googleButton.frame = CGRect(x: 16, y: 440 + 66, width: view.frame.width - 32, height: 50)
+        view.addSubview(googleButton)
+         GIDSignIn.sharedInstance().uiDelegate = self
+    }
+   
     // Wenn der Button "Anmelden" geklickt wird, oeffnet sich die Startseite und der User ist eingeloggt.
     // Bei fehlgeschlagenem Anmeldeversuch wird ein Error ausgegeben.
     // Created by Nina and Edriss
@@ -59,4 +66,6 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+
 }

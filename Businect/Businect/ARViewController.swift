@@ -103,9 +103,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         if metadataObjects != nil && metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == AVMetadataObject.ObjectType.qr{
-                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
+//                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                    alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
                     var hallo: String? = object.stringValue // {Some "Hallo"}
                     var neuerString: String = hallo! // Hallo
                     
@@ -162,7 +162,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                             let material = SCNMaterial()
                             if self.tempVerfuegbarkeit==true{
 //                                let text = SCNText(string: tempVorname + tempName, extrusionDepth: 1)
-                                let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBeruf: " + self.tempBeruf + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "," + self.tempInteresse2, extrusionDepth: 1)
+                                let text = SCNText(string: "Vorname: " + self.tempVorname + "\nName: " + self.tempName + "\nBeruf: " + self.tempBeruf + "\nBranche: " + self.tempBranche + "\nInteressen: " + self.tempInteresse1 + "& " + self.tempInteresse2, extrusionDepth: 1)
 //                                print(self.tempVorname)
                                 material.diffuse.contents = UIColor.green
                                 text.materials = [material]
@@ -190,7 +190,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                     })
                     sceneView.delegate = self
                     
-                    present(alert, animated: true, completion: nil)
+                   
                 }
                 }
         }

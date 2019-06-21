@@ -722,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1680" y="-779"/>
+            <point key="canvasLocation" x="-1680.8" y="-779.55665024630548"/>
         </scene>
     </scenes>
     <resources>
@@ -730,6 +730,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eE9-nb-Ubk"/>
-        <segue reference="dqe-CS-yan"/>
+        <segue reference="QYG-tT-IKs"/>
     </inferredMetricsTieBreakers>
 </document>

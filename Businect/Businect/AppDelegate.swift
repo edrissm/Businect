@@ -7,18 +7,61 @@
 
 import UIKit
 import Firebase
-
+import GoogleSignIn
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    let userDefault = UserDefaults()
     var window: UIWindow?
+    func present(_ viewControllerToPresent: UIViewController,
+                 animated flag: Bool,
+                 completion: (() -> Void)? = nil){
+        
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            print("Login mit Google Fehlgeschlagen", error)
+            return
+        }
+        print("Erfolgreich eingeloggt")
+        
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if let error = error {
+                print("Failed to create a Firebase User with Google account: ", error)
+                return
+            }
+            
+            guard let uid = user?.uid else { return }
+            print("Successfully logged into Firebase with Google", uid)
+           self.userDefault.set(true, forKey: "usersignedIn")
+          self.userDefault.synchronize()
+            
+        })
+      
+    }
+    
+   
+
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         return true
+    }
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
