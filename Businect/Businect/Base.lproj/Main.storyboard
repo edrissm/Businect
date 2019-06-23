@@ -316,7 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="epU-1C-RO3"/>
                     </view>
                     <connections>
-                        <outlet property="Button2" destination="XGs-ow-C2p" id="lBm-sf-kU3"/>
+                        <outlet property="Button" destination="XGs-ow-C2p" id="OgA-t5-YxS"/>
                         <outlet property="myImageView" destination="fPh-7i-5yx" id="1SA-d1-mIF"/>
                     </connections>
                 </viewController>

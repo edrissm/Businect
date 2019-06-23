@@ -69,7 +69,7 @@ class ProfilePageViewController: UIViewController {
                 self.user.removeAll()
                 let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
                 let nameObject = name.value as? [String: AnyObject]
-                let Beruf  = nameObject?["w"]
+                let Beruf  = nameObject?["Beruf"]
                 let Vorname  = nameObject?["Vorname"]
                 let Id = nameObject?["Id"]
                 let Branche = nameObject?["Branche"]

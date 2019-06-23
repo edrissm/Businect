@@ -12,7 +12,7 @@ import FirebaseStorage
 
 class QRCodeView: UIViewController {
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var Button2: UIButton!
+    @IBOutlet weak var Button: UIButton!
 
     // Wenn die Seite geladen wird, wird automatisch ein QR-Code für den Nutzer aus seiner Firebase URL erstellt. Zudem wird ein Screenshot des Barcode direkt im Firebase Storage gespeichert.
     // Created by Muqarab and Max
@@ -67,7 +67,7 @@ class QRCodeView: UIViewController {
     // Funktion um einen Screenshot des QR-Codes zu machen und zu teilen
     // Created by Muqarab and Max
     func shareMethod(){
-        Button2.isHidden = true
+        Button.isHidden = true
         let top: CGFloat = 200
         let bottom: CGFloat = 300
         let size = CGSize(width: view.frame.size.width, height: view.frame.size.height - top - bottom)
@@ -80,6 +80,6 @@ class QRCodeView: UIViewController {
         let activityVC = UIActivityViewController(activityItems: [snapshot!], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
-        Button2.isHidden=false
+        Button.isHidden=false
     }
 }
