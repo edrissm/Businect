@@ -22,6 +22,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate, GIDSignInU
         super.viewDidLoad()
 setupGoogleButtons()
     }
+    // Der Button für das Google Sign in wird erstellt und die Referenz zur Klasse App Delegate wird gebildet.
     fileprivate func setupGoogleButtons() {
         //add google sign in button
         let googleButton = GIDSignInButton()

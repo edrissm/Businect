@@ -12,9 +12,10 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     let userDefault = UserDefaults()
     var window: UIWindow?
-   
+    
+   // Das Einloggen über Google wird ermöglicht und die Daten auf die man zugreifen kann werden auf der Firebase Datenbank gespeichert.
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
+       
         if let error = error {
             print("Login mit Google Fehlgeschlagen", error)
             return
@@ -50,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
 
     
 
-
+// Verschiedene Schnittstellen wie die Tastur und Firebase werden in dieser Funktion aktiviert und können somit in der ganzen App benutzt werden.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         // Override point for customization after application launch.
@@ -59,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         GIDSignIn.sharedInstance().delegate = self
         return true
     }
+    //Methode um auf die Google Seite weitergeleitet zu werden und die Account Daten einzugeben.
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
         -> Bool {
             return GIDSignIn.sharedInstance().handle(url,
