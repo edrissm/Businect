@@ -9,6 +9,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import GoogleSignIn
+
 // Klasse, welche auf der Profilseite eines Nenutzers der Businect-App die dazugehörigen Daten (Benutzerspezifische Daten und Foto) aus der Firebase-Datenbank anzeigt.
 class ProfilePageViewController: UIViewController {
     
@@ -24,7 +25,6 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var downloadImage: UIImageView!
     
     var availability = Bool()
-    
     
     @IBOutlet weak var switchOutlet: UISwitch!
     
@@ -58,8 +58,6 @@ class ProfilePageViewController: UIViewController {
         super.viewDidLoad()
         stateSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
         
-        
-        
         refName = Database.database().reference().child("Benutzer");
         refName.observe(DataEventType.value, with: { (snapshot) in
             
@@ -67,39 +65,37 @@ class ProfilePageViewController: UIViewController {
             
             if snapshot.childrenCount > 0 {
                 self.user.removeAll()
-                let name = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
-                let nameObject = name.value as? [String: AnyObject]
-                let Beruf  = nameObject?["Beruf"]
-                let Vorname  = nameObject?["Vorname"]
-                let Id = nameObject?["Id"]
-                let Branche = nameObject?["Branche"]
-                let EMail = nameObject?["EMail"]
-                let Interesse1 = nameObject?["Interesse1"]
-                let Interesse2 = nameObject?["Interesse2"]
-                let Name = nameObject?["Name"]
+                let username = snapshot.childSnapshot(forPath: Auth.auth().currentUser?.displayName ?? "noDisplayName")
+                let nameObject = username.value as? [String: AnyObject]
+                let beruf  = nameObject?["Beruf"]
+                let vorname  = nameObject?["Vorname"]
+                let id = nameObject?["Id"]
+                let branche = nameObject?["Branche"]
+                let eMail = nameObject?["EMail"]
+                let interesse1 = nameObject?["Interesse1"]
+                let interesse2 = nameObject?["Interesse2"]
+                let name = nameObject?["Name"]
                 let Passwort = nameObject?["Passwort"]
                 let Verfuegbarkeit = nameObject?["Verfuegbarkeit"]
                 
-                let benutzer = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
+                let user = NameModel(Beruf: beruf as? String, Vorname: vorname as? String, Id: id as? String, Branche: branche as? String, EMail: eMail as? String, Interesse1: interesse1 as? String, Interesse2: interesse2 as? String, Name: name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
                 
-                self.lblVorname.text = benutzer.Vorname
-                self.lblBeruf.text = benutzer.Beruf
-                self.lblBranche.text = benutzer.Branche
-                self.lblEMail.text = benutzer.EMail
-                self.lblInteresse1.text = benutzer.Interesse1
-                self.lblInteresse2.text = benutzer.Interesse2
-                self.lblName.text = benutzer.Name
-                self.availability = benutzer.Verfuegbarkeit ?? true
+                self.lblVorname.text = user.vorname
+                self.lblBeruf.text = user.beruf
+                self.lblBranche.text = user.branche
+                self.lblEMail.text = user.eMail
+                self.lblInteresse1.text = user.interesse1
+                self.lblInteresse2.text = user.interesse2
+                self.lblName.text = user.name
+                self.availability = user.verfuegbarkeit ?? true
                 
-                if(benutzer.Verfuegbarkeit == false){
+                if(user.verfuegbarkeit == false){
                     print("hallo")
                     self.stateSwitch.setOn(false, animated:true)
                 }else {
                     self.stateSwitch.setOn(true, animated:true)
                 }
-                self.user.append(benutzer)
-                
-                
+                self.user.append(user)
             }
         })
     }
@@ -111,21 +107,21 @@ class ProfilePageViewController: UIViewController {
     // Wenn man auf den Button "Profilgoto anzeigen" klickt, wird das Profulfoto des eingeloggten Nutzers im UIImageVeiw angezeigt.
     // Created by Nina
     @IBAction func onDownloadTapped(_ sender: Any) {
-        var fotoName : String = ""
-        fotoName = Auth.auth().currentUser?.email ?? ""
-        let dateiFormat = ".png"
-        let downloadImageRef = imageReference.child(fotoName+dateiFormat)
-        let downloadtask = downloadImageRef.getData(maxSize: 1024 * 10 * 12) { (data, error) in
+        var imageName : String = ""
+        imageName = Auth.auth().currentUser?.email ?? ""
+        let fileFormat = ".png"
+        let downloadImageRef = imageReference.child(imageName+fileFormat)
+        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 10 * 12) { (data, error) in
             if let data = data {
                 let image = UIImage(data: data)
                 self.downloadImage.image = image
             }
             print (error ?? "NO ERROR")
         }
-        downloadtask.observe(.progress) { (snapshot) in
+        downloadTask.observe(.progress) { (snapshot) in
             print(snapshot.progress ?? "NO MORE PROGRESS")
         }
-        downloadtask.resume()
+        downloadTask.resume()
     }
     
     
