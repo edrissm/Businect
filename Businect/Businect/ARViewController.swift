@@ -150,13 +150,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
 
                             let userData = NameModel(Beruf: Beruf as? String, Vorname: Vorname as? String, Id: Id as? String, Branche: Branche as? String, EMail: EMail as? String, Interesse1: Interesse1 as? String, Interesse2: Interesse2 as? String, Name: Name as? String, Passwort: Passwort as? String, Verfuegbarkeit: Verfuegbarkeit as? Bool)
 
-                            self.tempVorname = userData.Vorname!
-                            self.tempName = userData.Name!
-                            self.tempBeruf =  userData.Beruf!
-                            self.tempBranche = userData.Branche!
-                            self.tempInteresse1 = userData.Interesse1!
-                            self.tempInteresse2 = userData.Interesse2!
-                            self.tempVerfuegbarkeit = userData.Verfuegbarkeit!
+                            self.tempVorname = userData.vorname!
+                            self.tempName = userData.name!
+                            self.tempBeruf =  userData.beruf!
+                            self.tempBranche = userData.branche!
+                            self.tempInteresse1 = userData.interesse1!
+                            self.tempInteresse2 = userData.interesse2!
+                            self.tempVerfuegbarkeit = userData.verfuegbarkeit!
 //
                             
                             let material = SCNMaterial()

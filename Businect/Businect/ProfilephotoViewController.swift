@@ -32,7 +32,8 @@ class ProfilephotoViewController: UIViewController, UIImagePickerControllerDeleg
         return Storage.storage().reference().child("images")
     }
     
-    // Wenn ein Foto in der Galerie ausgewählt wird, wird dieses in den UIIMageView eingefügt und dem Benutzer wird es ermöglicht auf "Weiter" zu klicken
+    
+    // Durch klicken auf den Button "Profilfoto auswählen" wir die Galerie des Bentuzers geöfnet.
     // Created by Muqarab
     @IBAction func galleryTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
@@ -46,12 +47,12 @@ class ProfilephotoViewController: UIViewController, UIImagePickerControllerDeleg
     // Created by Nina and Edriss
     @IBAction func uploadImgToFirebase(_ sender: Any) {
         guard let image = imgImage.image else { return }
-        guard let imageData2 = image.pngData() else { return }
-        var fotoName : String = ""
-        fotoName = Auth.auth().currentUser?.email ?? ""
-        let dateiFormat = ".png"
-        let uploadImageRef = imageReference.child(fotoName+dateiFormat)
-        let uploadTask = uploadImageRef.putData(imageData2, metadata: nil) { (metadata, error) in
+        guard let imageData = image.pngData() else { return }
+        var imageName : String = ""
+        imageName = Auth.auth().currentUser?.email ?? ""
+        let fileFormat = ".png"
+        let uploadImageRef = imageReference.child(imageName+fileFormat)
+        let uploadTask = uploadImageRef.putData(imageData, metadata: nil) { (metadata, error) in
             print("UPLOAD TASK FINISHED")
             print(metadata ?? "NO METADATA")
             print(error ?? "NO ERROR")
@@ -62,7 +63,7 @@ class ProfilephotoViewController: UIViewController, UIImagePickerControllerDeleg
         uploadTask.resume()
     }
     
-    // Durch klicken auf den Button "Profilfoto asuwählen" wir die Galerie des Bentuzers geöfnet.
+    // Wenn ein Foto in der Galerie ausgewählt wird, wird dieses in den UIIMageView eingefügt und dem Benutzer wird es ermöglicht auf "Registrierung abschließen" zu klicken
     // Created by Muqarab
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImage: UIImage?
