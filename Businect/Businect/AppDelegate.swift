@@ -12,11 +12,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     let userDefault = UserDefaults()
     var window: UIWindow?
-    func present(_ viewControllerToPresent: UIViewController,
-                 animated flag: Bool,
-                 completion: (() -> Void)? = nil){
-        
-    }
+   
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
