@@ -695,9 +695,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me0-Gd-DgI">
-                                <rect key="frame" x="41" y="44" width="139" height="80"/>
+                                <rect key="frame" x="41" y="44" width="140" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Zutück zu Startseite"/>
+                                <state key="normal" title="Zurück zu Startseite"/>
                                 <connections>
                                     <segue destination="PqR-SV-mhc" kind="show" id="es0-E8-frQ"/>
                                 </connections>
@@ -729,7 +729,7 @@
         <image name="Logo" width="1232" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eE9-nb-Ubk"/>
+        <segue reference="es0-E8-frQ"/>
         <segue reference="QYG-tT-IKs"/>
     </inferredMetricsTieBreakers>
 </document>
