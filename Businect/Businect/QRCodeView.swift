@@ -59,7 +59,7 @@ class QRCodeView: UIViewController {
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
-    
+    //Dem Button wird eine Aktion zugeordnet die Aktion ist die share Methode.
     @IBAction func buttonShare(_sender: Any){
         shareMethod()
     }

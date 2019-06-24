@@ -24,7 +24,7 @@ setupGoogleButtons()
     }
     // Der Button für das Google Sign in wird erstellt und die Referenz zur Klasse App Delegate wird gebildet.
     fileprivate func setupGoogleButtons() {
-        //add google sign in button
+      
         let googleButton = GIDSignInButton()
         googleButton.frame = CGRect(x: 16, y: 440 + 66, width: view.frame.width - 32, height: 50)
         view.addSubview(googleButton)

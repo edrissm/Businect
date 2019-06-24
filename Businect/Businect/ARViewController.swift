@@ -30,7 +30,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     var tempInteresse2 = ""
     var tempVerfuegbarkeit = true
     
-    //Videoanzeige der Kamera
+   
     var video = AVCaptureVideoPreviewLayer()
    
     // Zeigt die eigenen Benutzerinformationen augmented an.
@@ -39,13 +39,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         super.viewDidLoad()
         
         
-         //Creating session
+        
          let session = AVCaptureSession()
          
-         //Define capture device
+        
          let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
          
-         //add the capture device to our session
+        
          do{
          let input = try AVCaptureDeviceInput(device: captureDevice)
          session.addInput(input)
@@ -60,11 +60,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
          output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
          output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
          video = AVCaptureVideoPreviewLayer(session: session)
-         //set frame
          video.frame = backview.layer.bounds
          backview.layer.addSublayer(video)
         backview.isHidden = false
-         //session starten
          session.startRunning()
  
         
@@ -73,27 +71,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //let configuration = ARWorldTrackingConfiguration()
-        //sceneView.session.run(configuration)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //sceneView.session.pause()
+    
     }
    
     func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+       
         
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
+        
         
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
+        
         
     }
  
@@ -103,11 +100,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
         if metadataObjects != nil && metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == AVMetadataObject.ObjectType.qr{
-//                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                    alert.addAction(UIAlertAction(title: "Kopieren", style: .default, handler: { (nil) in UIPasteboard.general.string = object.stringValue}))
-                    var hallo: String? = object.stringValue // {Some "Hallo"}
-                    var neuerString: String = hallo! // Hallo
+                    var data: String? = object.stringValue // {Some "Hallo"}
+                    var newString: String = data! // Hallo
                     
                     
                     let configuration = ARWorldTrackingConfiguration()
@@ -135,7 +129,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, AVCaptureMetadataOu
                         
                         if snapshot.childrenCount > 0 {
                             self.user.removeAll()
-                            let name = snapshot.childSnapshot(forPath: neuerString ?? "noDisplayName")
+                            let name = snapshot.childSnapshot(forPath: newString ?? "noDisplayName")
                             let nameObject = name.value as? [String: AnyObject]
                             let Beruf  = nameObject?["Beruf"]
                             let Vorname  = nameObject?["Vorname"]
