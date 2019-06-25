@@ -1,6 +1,4 @@
-# Businect
-
-1.2 Installationsanleitung
+# Businect - Installationsanleitung
 
 Um die Businect App auf Ihr Smartphone zu installieren, besuchen Sie die Seite https://github.com/edrissm/Businect und laden Sie sich den Ordner “Businect” herunter.
 
